@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.bus.dimensions.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="DimensionsPbmWSService" targetNamespace="http://ws.bus.dimensions.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="DimensionsPbmWSPortBindingPolicy" />
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://pbmswitch.com:9090/DimensionsPbmWS?xsd=1" namespace="http://www.pbmSwitch.com/DataDictionary/CommonTypes" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://pbmswitch.com:9090/DimensionsPbmWS?xsd=2" namespace="http://www.haad.ae/DataDictionary/CommonTypes" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://pbmswitch.com:9090/DimensionsPbmWS?xsd=3" namespace="http://ws.bus.dimensions.com/" />
+    </xsd:schema>
+  </types>
+  <message name="getNewAuthorizations">
+    <part name="parameters" element="tns:getNewAuthorizations" />
+  </message>
+  <message name="getNewAuthorizationsResponse">
+    <part name="parameters" element="tns:getNewAuthorizationsResponse" />
+  </message>
+  <message name="DhcTlException">
+    <part name="fault" element="tns:DhcTlException" />
+  </message>
+  <message name="getActivityStatus">
+    <part name="parameters" element="tns:getActivityStatus" />
+  </message>
+  <message name="getActivityStatusResponse">
+    <part name="parameters" element="tns:getActivityStatusResponse" />
+  </message>
+  <message name="reverseSingleActivity">
+    <part name="parameters" element="tns:reverseSingleActivity" />
+  </message>
+  <message name="reverseSingleActivityResponse">
+    <part name="parameters" element="tns:reverseSingleActivityResponse" />
+  </message>
+  <message name="cancelRequestByIdPayer">
+    <part name="parameters" element="tns:cancelRequestByIdPayer" />
+  </message>
+  <message name="cancelRequestByIdPayerResponse">
+    <part name="parameters" element="tns:cancelRequestByIdPayerResponse" />
+  </message>
+  <message name="confirmAuthrizationRecieved">
+    <part name="parameters" element="tns:confirmAuthrizationRecieved" />
+  </message>
+  <message name="confirmAuthrizationRecievedResponse">
+    <part name="parameters" element="tns:confirmAuthrizationRecievedResponse" />
+  </message>
+  <message name="deletePBMLinkProvider">
+    <part name="parameters" element="tns:deletePBMLinkProvider" />
+  </message>
+  <message name="deletePBMLinkProviderResponse">
+    <part name="parameters" element="tns:deletePBMLinkProviderResponse" />
+  </message>
+  <message name="deletePBMLinkUser">
+    <part name="parameters" element="tns:deletePBMLinkUser" />
+  </message>
+  <message name="deletePBMLinkUserResponse">
+    <part name="parameters" element="tns:deletePBMLinkUserResponse" />
+  </message>
+  <message name="dispencePrescription">
+    <part name="parameters" element="tns:dispencePrescription" />
+  </message>
+  <message name="dispencePrescriptionResponse">
+    <part name="parameters" element="tns:dispencePrescriptionResponse" />
+  </message>
+  <message name="getAuthorizationStatus">
+    <part name="parameters" element="tns:getAuthorizationStatus" />
+  </message>
+  <message name="getAuthorizationStatusResponse">
+    <part name="parameters" element="tns:getAuthorizationStatusResponse" />
+  </message>
+  <message name="getMemeberDetails">
+    <part name="parameters" element="tns:getMemeberDetails" />
+  </message>
+  <message name="getMemeberDetailsResponse">
+    <part name="parameters" element="tns:getMemeberDetailsResponse" />
+  </message>
+  <message name="getPayerMemberDetails">
+    <part name="parameters" element="tns:getPayerMemberDetails" />
+  </message>
+  <message name="getPayerMemberDetailsResponse">
+    <part name="parameters" element="tns:getPayerMemberDetailsResponse" />
+  </message>
+  <message name="getProcessingStatus">
+    <part name="parameters" element="tns:getProcessingStatus" />
+  </message>
+  <message name="getProcessingStatusResponse">
+    <part name="parameters" element="tns:getProcessingStatusResponse" />
+  </message>
+  <message name="getTransactionStatus">
+    <part name="parameters" element="tns:getTransactionStatus" />
+  </message>
+  <message name="getTransactionStatusResponse">
+    <part name="parameters" element="tns:getTransactionStatusResponse" />
+  </message>
+  <message name="refreshSystemCache">
+    <part name="parameters" element="tns:refreshSystemCache" />
+  </message>
+  <message name="reverseSingleActivityAnyTime">
+    <part name="parameters" element="tns:reverseSingleActivityAnyTime" />
+  </message>
+  <message name="reverseSingleActivityAnyTimeResponse">
+    <part name="parameters" element="tns:reverseSingleActivityAnyTimeResponse" />
+  </message>
+  <message name="submitProviderClaims">
+    <part name="parameters" element="tns:submitProviderClaims" />
+  </message>
+  <message name="submitProviderClaimsResponse">
+    <part name="parameters" element="tns:submitProviderClaimsResponse" />
+  </message>
+  <message name="uploadLinkPriorRequest">
+    <part name="parameters" element="tns:uploadLinkPriorRequest" />
+  </message>
+  <message name="uploadLinkPriorRequestResponse">
+    <part name="parameters" element="tns:uploadLinkPriorRequestResponse" />
+  </message>
+  <message name="registerProvider">
+    <part name="parameters" element="tns:registerProvider" />
+  </message>
+  <message name="registerProviderResponse">
+    <part name="parameters" element="tns:registerProviderResponse" />
+  </message>
+  <message name="PostPriorRequest">
+    <part name="parameters" element="tns:PostPriorRequest" />
+  </message>
+  <message name="PostPriorRequestResponse">
+    <part name="parameters" element="tns:PostPriorRequestResponse" />
+  </message>
+  <message name="editProvider">
+    <part name="parameters" element="tns:editProvider" />
+  </message>
+  <message name="editProviderResponse">
+    <part name="parameters" element="tns:editProviderResponse" />
+  </message>
+  <message name="editUser">
+    <part name="parameters" element="tns:editUser" />
+  </message>
+  <message name="editUserResponse">
+    <part name="parameters" element="tns:editUserResponse" />
+  </message>
+  <message name="registerUser">
+    <part name="parameters" element="tns:registerUser" />
+  </message>
+  <message name="registerUserResponse">
+    <part name="parameters" element="tns:registerUserResponse" />
+  </message>
+  <message name="cancelRequest">
+    <part name="parameters" element="tns:cancelRequest" />
+  </message>
+  <message name="cancelRequestResponse">
+    <part name="parameters" element="tns:cancelRequestResponse" />
+  </message>
+  <message name="editProviderType">
+    <part name="parameters" element="tns:editProviderType" />
+  </message>
+  <message name="editProviderTypeResponse">
+    <part name="parameters" element="tns:editProviderTypeResponse" />
+  </message>
+  <message name="editPBMLinkUser">
+    <part name="parameters" element="tns:editPBMLinkUser" />
+  </message>
+  <message name="editPBMLinkUserResponse">
+    <part name="parameters" element="tns:editPBMLinkUserResponse" />
+  </message>
+  <message name="triggerLMU">
+    <part name="parameters" element="tns:triggerLMU" />
+  </message>
+  <message name="triggerLMUResponse">
+    <part name="parameters" element="tns:triggerLMUResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <message name="submitNonSwitchPayerClaims">
+    <part name="parameters" element="tns:submitNonSwitchPayerClaims" />
+  </message>
+  <message name="submitNonSwitchPayerClaimsResponse">
+    <part name="parameters" element="tns:submitNonSwitchPayerClaimsResponse" />
+  </message>
+  <message name="editProviderLicense">
+    <part name="parameters" element="tns:editProviderLicense" />
+  </message>
+  <message name="editProviderLicenseResponse">
+    <part name="parameters" element="tns:editProviderLicenseResponse" />
+  </message>
+  <portType name="DimensionsPbmWS">
+    <operation name="getNewAuthorizations">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getNewAuthorizationsRequest" message="tns:getNewAuthorizations" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getNewAuthorizationsResponse" message="tns:getNewAuthorizationsResponse" />
+      <fault wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getNewAuthorizations/Fault/DhcTlException" name="DhcTlException" message="tns:DhcTlException" />
+    </operation>
+    <operation name="getActivityStatus">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getActivityStatusRequest" message="tns:getActivityStatus" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getActivityStatusResponse" message="tns:getActivityStatusResponse" />
+      <fault wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getActivityStatus/Fault/DhcTlException" name="DhcTlException" message="tns:DhcTlException" />
+    </operation>
+    <operation name="reverseSingleActivity">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/reverseSingleActivityRequest" message="tns:reverseSingleActivity" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/reverseSingleActivityResponse" message="tns:reverseSingleActivityResponse" />
+    </operation>
+    <operation name="cancelRequestByIdPayer">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/cancelRequestByIdPayerRequest" message="tns:cancelRequestByIdPayer" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/cancelRequestByIdPayerResponse" message="tns:cancelRequestByIdPayerResponse" />
+    </operation>
+    <operation name="confirmAuthrizationRecieved">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/confirmAuthrizationRecievedRequest" message="tns:confirmAuthrizationRecieved" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/confirmAuthrizationRecievedResponse" message="tns:confirmAuthrizationRecievedResponse" />
+    </operation>
+    <operation name="deletePBMLinkProvider">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/deletePBMLinkProviderRequest" message="tns:deletePBMLinkProvider" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/deletePBMLinkProviderResponse" message="tns:deletePBMLinkProviderResponse" />
+    </operation>
+    <operation name="deletePBMLinkUser">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/deletePBMLinkUserRequest" message="tns:deletePBMLinkUser" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/deletePBMLinkUserResponse" message="tns:deletePBMLinkUserResponse" />
+    </operation>
+    <operation name="dispencePrescription">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/dispencePrescriptionRequest" message="tns:dispencePrescription" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/dispencePrescriptionResponse" message="tns:dispencePrescriptionResponse" />
+    </operation>
+    <operation name="getAuthorizationStatus">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getAuthorizationStatusRequest" message="tns:getAuthorizationStatus" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getAuthorizationStatusResponse" message="tns:getAuthorizationStatusResponse" />
+    </operation>
+    <operation name="getMemeberDetails">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getMemeberDetailsRequest" message="tns:getMemeberDetails" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getMemeberDetailsResponse" message="tns:getMemeberDetailsResponse" />
+    </operation>
+    <operation name="getPayerMemberDetails">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getPayerMemberDetailsRequest" message="tns:getPayerMemberDetails" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getPayerMemberDetailsResponse" message="tns:getPayerMemberDetailsResponse" />
+    </operation>
+    <operation name="getProcessingStatus">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getProcessingStatusRequest" message="tns:getProcessingStatus" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getProcessingStatusResponse" message="tns:getProcessingStatusResponse" />
+    </operation>
+    <operation name="getTransactionStatus">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getTransactionStatusRequest" message="tns:getTransactionStatus" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/getTransactionStatusResponse" message="tns:getTransactionStatusResponse" />
+    </operation>
+    <operation name="refreshSystemCache">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/refreshSystemCache" message="tns:refreshSystemCache" />
+    </operation>
+    <operation name="reverseSingleActivityAnyTime">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/reverseSingleActivityAnyTimeRequest" message="tns:reverseSingleActivityAnyTime" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/reverseSingleActivityAnyTimeResponse" message="tns:reverseSingleActivityAnyTimeResponse" />
+    </operation>
+    <operation name="submitProviderClaims">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/submitProviderClaimsRequest" message="tns:submitProviderClaims" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/submitProviderClaimsResponse" message="tns:submitProviderClaimsResponse" />
+    </operation>
+    <operation name="uploadLinkPriorRequest">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/uploadLinkPriorRequestRequest" message="tns:uploadLinkPriorRequest" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/uploadLinkPriorRequestResponse" message="tns:uploadLinkPriorRequestResponse" />
+      <fault wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/uploadLinkPriorRequest/Fault/DhcTlException" name="DhcTlException" message="tns:DhcTlException" />
+    </operation>
+    <operation name="registerProvider">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/registerProviderRequest" message="tns:registerProvider" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/registerProviderResponse" message="tns:registerProviderResponse" />
+    </operation>
+    <operation name="PostPriorRequest">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/PostPriorRequestRequest" message="tns:PostPriorRequest" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/PostPriorRequestResponse" message="tns:PostPriorRequestResponse" />
+      <fault wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/PostPriorRequest/Fault/DhcTlException" name="DhcTlException" message="tns:DhcTlException" />
+    </operation>
+    <operation name="editProvider">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/editProviderRequest" message="tns:editProvider" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/editProviderResponse" message="tns:editProviderResponse" />
+    </operation>
+    <operation name="editUser">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/editUserRequest" message="tns:editUser" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/editUserResponse" message="tns:editUserResponse" />
+    </operation>
+    <operation name="registerUser">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/registerUserRequest" message="tns:registerUser" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/registerUserResponse" message="tns:registerUserResponse" />
+    </operation>
+    <operation name="cancelRequest">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/cancelRequestRequest" message="tns:cancelRequest" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/cancelRequestResponse" message="tns:cancelRequestResponse" />
+    </operation>
+    <operation name="editProviderType">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/editProviderTypeRequest" message="tns:editProviderType" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/editProviderTypeResponse" message="tns:editProviderTypeResponse" />
+    </operation>
+    <operation name="editPBMLinkUser">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/editPBMLinkUserRequest" message="tns:editPBMLinkUser" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/editPBMLinkUserResponse" message="tns:editPBMLinkUserResponse" />
+    </operation>
+    <operation name="triggerLMU">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/triggerLMURequest" message="tns:triggerLMU" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/triggerLMUResponse" message="tns:triggerLMUResponse" />
+      <fault wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/triggerLMU/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="submitNonSwitchPayerClaims">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/submitNonSwitchPayerClaimsRequest" message="tns:submitNonSwitchPayerClaims" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/submitNonSwitchPayerClaimsResponse" message="tns:submitNonSwitchPayerClaimsResponse" />
+    </operation>
+    <operation name="editProviderLicense">
+      <input wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/editProviderLicenseRequest" message="tns:editProviderLicense" />
+      <output wsam:Action="http://ws.bus.dimensions.com/DimensionsPbmWS/editProviderLicenseResponse" message="tns:editProviderLicenseResponse" />
+    </operation>
+  </portType>
+  <binding name="DimensionsPbmWSPortBinding" type="tns:DimensionsPbmWS">
+    <wsp:PolicyReference URI="#DimensionsPbmWSPortBindingPolicy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getNewAuthorizations">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="DhcTlException">
+        <soap:fault use="literal" name="DhcTlException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getActivityStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="DhcTlException">
+        <soap:fault use="literal" name="DhcTlException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="reverseSingleActivity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cancelRequestByIdPayer">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="confirmAuthrizationRecieved">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deletePBMLinkProvider">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deletePBMLinkUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="dispencePrescription">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAuthorizationStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getMemeberDetails">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getPayerMemberDetails">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getProcessingStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTransactionStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="refreshSystemCache">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="reverseSingleActivityAnyTime">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="submitProviderClaims">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="uploadLinkPriorRequest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="DhcTlException">
+        <soap:fault use="literal" name="DhcTlException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="registerProvider">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="PostPriorRequest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="DhcTlException">
+        <soap:fault use="literal" name="DhcTlException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="editProvider">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="editUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registerUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cancelRequest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="editProviderType">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="editPBMLinkUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="triggerLMU">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="submitNonSwitchPayerClaims">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="editProviderLicense">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="DimensionsPbmWSService">
+    <port name="DimensionsPbmWSPort" binding="tns:DimensionsPbmWSPortBinding">
+      <soap:address location="http://pbmswitch.com:9090/DimensionsPbmWS" />
+    </port>
+  </service>
+</definitions>

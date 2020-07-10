@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Prior.Request xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Header>
+		<SenderID>DHA-F-9999998</SenderID>
+		<ReceiverID>INS999</ReceiverID>
+		<TransactionDate>13/08/2018 09:04</TransactionDate>
+		<RecordCount>1</RecordCount>
+		<DispositionFlag>PRODUCTION</DispositionFlag>
+	</Header>
+	<Authorization>
+		<Type>Authorization</Type>
+		<ID>DHA-F-9999998-INS999-20180813090424</ID>
+		<MemberID>888821</MemberID>
+		<PayerID>INS999</PayerID>
+		<EmiratesIDNumber>000-0000-0000000-0</EmiratesIDNumber>
+		<DateOrdered>13/08/2018</DateOrdered>
+		<Encounter>
+			<FacilityID>DHA-F-9999998</FacilityID>
+			<Type>1</Type>
+		</Encounter>
+		<Diagnosis>
+			<Type>Principal</Type>
+			<Code>R51</Code>
+		</Diagnosis>
+		<Activity>
+			<ID>14369403</ID>
+			<Start>13/08/2018 09:04</Start>
+			<Type>5</Type>
+			<Code>1162-414101-0051</Code>
+			<Quantity>48</Quantity>
+			<Net>24</Net>
+			<Clinician>GN3374</Clinician>
+			<Observation>
+				<Type>Text</Type>
+				<Code>Duration</Code>
+				<Value>2</Value>
+				<ValueType>Days</ValueType>
+			</Observation>
+		</Activity>
+	</Authorization>
+</Prior.Request>

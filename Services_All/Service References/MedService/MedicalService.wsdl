@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="medservice.tameen.ae" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="medservice.tameen.ae" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="medservice.tameen.ae/Imports">
+      <xsd:import schemaLocation="https://medservice.tameen.ae/MedicalService.svc?xsd=xsd0" namespace="medservice.tameen.ae" />
+      <xsd:import schemaLocation="https://medservice.tameen.ae/MedicalService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMedicalService_CheckMemberEligibility_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMemberEligibility" />
+  </wsdl:message>
+  <wsdl:message name="IMedicalService_CheckMemberEligibility_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMemberEligibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMedicalService_GetCoverAndLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoverAndLimit" />
+  </wsdl:message>
+  <wsdl:message name="IMedicalService_GetCoverAndLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoverAndLimitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMedicalService_GetBenefitFeeGuide_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBenefitFeeGuide" />
+  </wsdl:message>
+  <wsdl:message name="IMedicalService_GetBenefitFeeGuide_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBenefitFeeGuideResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMedicalService_GetPolicyDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyDocument" />
+  </wsdl:message>
+  <wsdl:message name="IMedicalService_GetPolicyDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPolicyDocumentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMedicalService">
+    <wsdl:operation name="CheckMemberEligibility">
+      <wsdl:input wsaw:Action="medservice.tameen.ae/IMedicalService/CheckMemberEligibility" message="tns:IMedicalService_CheckMemberEligibility_InputMessage" />
+      <wsdl:output wsaw:Action="medservice.tameen.ae/IMedicalService/CheckMemberEligibilityResponse" message="tns:IMedicalService_CheckMemberEligibility_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoverAndLimit">
+      <wsdl:input wsaw:Action="medservice.tameen.ae/IMedicalService/GetCoverAndLimit" message="tns:IMedicalService_GetCoverAndLimit_InputMessage" />
+      <wsdl:output wsaw:Action="medservice.tameen.ae/IMedicalService/GetCoverAndLimitResponse" message="tns:IMedicalService_GetCoverAndLimit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBenefitFeeGuide">
+      <wsdl:input wsaw:Action="medservice.tameen.ae/IMedicalService/GetBenefitFeeGuide" message="tns:IMedicalService_GetBenefitFeeGuide_InputMessage" />
+      <wsdl:output wsaw:Action="medservice.tameen.ae/IMedicalService/GetBenefitFeeGuideResponse" message="tns:IMedicalService_GetBenefitFeeGuide_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPolicyDocument">
+      <wsdl:input wsaw:Action="medservice.tameen.ae/IMedicalService/GetPolicyDocument" message="tns:IMedicalService_GetPolicyDocument_InputMessage" />
+      <wsdl:output wsaw:Action="medservice.tameen.ae/IMedicalService/GetPolicyDocumentResponse" message="tns:IMedicalService_GetPolicyDocument_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

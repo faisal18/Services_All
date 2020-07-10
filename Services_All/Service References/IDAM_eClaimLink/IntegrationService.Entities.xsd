@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/IntegrationService.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IntegrationService.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ResponseWCF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Facilities" nillable="true" type="tns:ArrayOfFacility" />
+      <xs:element minOccurs="0" name="Professionals" nillable="true" type="tns:ArrayOfProfessional" />
+      <xs:element minOccurs="0" name="ResultMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultValue" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseWCF" nillable="true" type="tns:ResponseWCF" />
+  <xs:complexType name="ArrayOfFacility">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Facility" nillable="true" type="tns:Facility" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFacility" nillable="true" type="tns:ArrayOfFacility" />
+  <xs:complexType name="Facility">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentLicense" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FacilityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FacilitySubCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="LicenseFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicenseStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseTo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Phone1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreviousLicenses" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RowId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Facility" nillable="true" type="tns:Facility" />
+  <xs:complexType name="ArrayOfProfessional">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Professional" nillable="true" type="tns:Professional" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProfessional" nillable="true" type="tns:ArrayOfProfessional" />
+  <xs:complexType name="Professional">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="LicenseFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicenseNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseTo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MainFacilityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainFacilityUniqueID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParttimeFacility1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParttimeFacility1LicenseStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParttimeFacility2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParttimeFacility2LicenseStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParttimeFacility3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParttimeFacility3LicenseStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParttimeFacility4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParttimeFacility4LicenseStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreviousLicenses" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Profession" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfessionalName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RowId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Professional" nillable="true" type="tns:Professional" />
+</xs:schema>

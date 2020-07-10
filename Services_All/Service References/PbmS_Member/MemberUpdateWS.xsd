@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://memberMgr.ws.bus.dimensions.com/" targetNamespace="http://memberMgr.ws.bus.dimensions.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DhcTlException" type="tns:DhcTlException" />
+  <xs:element name="getMemberDetails" type="tns:getMemberDetails" />
+  <xs:element name="getMemberDetailsResponse" type="tns:getMemberDetailsResponse" />
+  <xs:element name="updateMemberExclusion" type="tns:updateMemberExclusion" />
+  <xs:element name="updateMemberExclusionResponse" type="tns:updateMemberExclusionResponse" />
+  <xs:element name="updateMemebr" type="tns:updateMemebr" />
+  <xs:element name="updateMemebrBatch" type="tns:updateMemebrBatch" />
+  <xs:element name="updateMemebrBatchResponse" type="tns:updateMemebrBatchResponse" />
+  <xs:element name="updateMemebrResponse" type="tns:updateMemebrResponse" />
+  <xs:complexType name="updateMemebrBatch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="membersList" type="tns:memberRecordDTO" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="memberRecordDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="divisionId" type="xs:string" />
+      <xs:element minOccurs="0" name="effectiveFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="effectiveTo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="firstName" type="xs:string" />
+      <xs:element name="gender" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="groupId" type="xs:string" />
+      <xs:element minOccurs="0" name="lastName" type="xs:string" />
+      <xs:element minOccurs="0" name="MIFirstName" type="xs:string" />
+      <xs:element minOccurs="0" name="MILastName" type="xs:string" />
+      <xs:element minOccurs="0" name="MIMemberNo" type="xs:string" />
+      <xs:element minOccurs="0" name="memberNo" type="xs:string" />
+      <xs:element minOccurs="0" name="nationalId" type="xs:string" />
+      <xs:element name="payerID" type="xs:int" />
+      <xs:element name="personCode" type="xs:int" />
+      <xs:element minOccurs="0" name="relationshipCode" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateMemebrBatchResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DhcTlException">
+    <xs:sequence>
+      <xs:element name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="exceptionDetails" type="xs:string" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMemberDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="payerId" type="xs:int" />
+      <xs:element minOccurs="0" name="memberId" type="xs:string" />
+      <xs:element minOccurs="0" name="authKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMemberDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:memberDetailsResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="memberDetailsResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="isValid" type="xs:int" />
+      <xs:element minOccurs="0" name="MSG" type="xs:string" />
+      <xs:element minOccurs="0" name="member" type="tns:memberRecordDTO" />
+      <xs:element minOccurs="0" name="value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateMemebr">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="member" type="tns:memberRecordDTO" />
+      <xs:element minOccurs="0" name="payerId" type="xs:int" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateMemebrResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateMemberExclusion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="payerId" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="memberExclusionsList" type="tns:memberExclusion" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="memberExclusion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gourpId" type="xs:int" />
+      <xs:element minOccurs="0" name="memberNo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateMemberExclusionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="feedbackResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="value" type="xs:int" />
+      <xs:element minOccurs="0" name="MSG" type="xs:string" />
+      <xs:element minOccurs="0" name="XmlFileName" type="xs:string" />
+      <xs:element minOccurs="0" name="errorDetails" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

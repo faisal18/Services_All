@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.eClaimLink.ae/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.eClaimLink.ae/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.eClaimLink.ae/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="HelloTest">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloTestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthonticateClinician">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="systemUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="systemPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthonticateClinicianResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthonticateClinicianResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthonticateClinicians">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="systemUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="systemPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthonticateCliniciansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuthonticateCliniciansResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClinicianName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClinicians">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datetime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCliniciansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCliniciansResult" type="tns:ResponseWCF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResponseWCF">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Facilities" type="tns:ArrayOfFacility" />
+          <s:element minOccurs="0" maxOccurs="1" name="Professionals" type="tns:ArrayOfProfessional" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResultValue" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionDataObject" />
+      <s:complexType name="ArrayOfFacility">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Facility" nillable="true" type="tns:Facility" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Facility">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentLicense" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FacilityName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseFrom" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseTo" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreviousLicenses" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UniqueID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProfessional">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Professional" nillable="true" type="tns:Professional" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Professional">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ExtensionData" type="tns:ExtensionDataObject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseFrom" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseTo" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MainFacilityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MainFacilityUniqueID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParttimeFacility1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParttimeFacility2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParttimeFacility3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ParttimeFacility4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreviousLicenses" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Profession" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProfessionalName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowId" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Specialties" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UniqueID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloTestSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloTest" />
+  </wsdl:message>
+  <wsdl:message name="HelloTestSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthonticateClinicianSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthonticateClinician" />
+  </wsdl:message>
+  <wsdl:message name="AuthonticateClinicianSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthonticateClinicianResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthonticateCliniciansSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthonticateClinicians" />
+  </wsdl:message>
+  <wsdl:message name="AuthonticateCliniciansSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthonticateCliniciansResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCliniciansSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClinicians" />
+  </wsdl:message>
+  <wsdl:message name="GetCliniciansSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCliniciansResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClinicianAuthonticationSoap">
+    <wsdl:operation name="HelloTest">
+      <wsdl:input message="tns:HelloTestSoapIn" />
+      <wsdl:output message="tns:HelloTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthonticateClinician">
+      <wsdl:input message="tns:AuthonticateClinicianSoapIn" />
+      <wsdl:output message="tns:AuthonticateClinicianSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthonticateClinicians">
+      <wsdl:input message="tns:AuthonticateCliniciansSoapIn" />
+      <wsdl:output message="tns:AuthonticateCliniciansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClinicians">
+      <wsdl:input message="tns:GetCliniciansSoapIn" />
+      <wsdl:output message="tns:GetCliniciansSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClinicianAuthonticationSoap" type="tns:ClinicianAuthonticationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloTest">
+      <soap:operation soapAction="http://www.eClaimLink.ae/HelloTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthonticateClinician">
+      <soap:operation soapAction="http://www.eClaimLink.ae/AuthonticateClinician" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthonticateClinicians">
+      <soap:operation soapAction="http://www.eClaimLink.ae/AuthonticateClinicians" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClinicians">
+      <soap:operation soapAction="http://www.eClaimLink.ae/GetClinicians" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClinicianAuthonticationSoap12" type="tns:ClinicianAuthonticationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloTest">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/HelloTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthonticateClinician">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/AuthonticateClinician" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthonticateClinicians">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/AuthonticateClinicians" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClinicians">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/GetClinicians" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClinicianAuthontication">
+    <wsdl:port name="ClinicianAuthonticationSoap" binding="tns:ClinicianAuthonticationSoap">
+      <soap:address location="https://dhpo.eclaimlink.ae/ClinicianAuthontication.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClinicianAuthonticationSoap12" binding="tns:ClinicianAuthonticationSoap12">
+      <soap12:address location="https://dhpo.eclaimlink.ae/ClinicianAuthontication.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

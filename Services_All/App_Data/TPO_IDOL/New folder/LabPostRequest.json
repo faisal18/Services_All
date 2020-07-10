@@ -1,0 +1,41 @@
+{
+"FileName": "test.json",
+  "LabRequest": {
+    "Header": {
+      "SenderID": "DHA-F-0045687",
+      "ReceiverID": "INS026",
+      "TransactionDate": "18/12/2017 12:31",
+      "RecordCount": "1",
+      "DispositionFlag": "PRODUCTION",
+      "PayerID": "INS004"
+    },
+    "Order": {
+      "ID": "DHA-F-9999998-INS998-20170926123106",	  
+      "Type": "Request",
+      "Clinician": "MS0008-05",
+      "Patient": {
+        "MemberID": "HC-02",
+        "NationalIDNumber": "111-1111-1111111-1",
+        "DateOfBirth": "03/09/1999",
+        "Weight": "50"
+      },
+      "Encounter": {
+        "FacilityID": "DHA-F-9999998",
+        "Type": "1"
+      },
+      "Diagnosis": [{
+        "Type": "Principal",
+        "Code": "G44.309"
+      }],
+      "Activity": [{
+        "ID": "4515609",
+        "Start": "26/09/2017 12:31",
+        "Type": "3",
+        "Code": "00550",
+        "Quantity": "15",
+        "Instructions": "test"
+      }]
+    }
+  }
+  
+}

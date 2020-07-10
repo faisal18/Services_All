@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.eClaimLink.ae/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.eClaimLink.ae/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.eClaimLink.ae/">
+      <s:element name="UploadlabRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="facilityLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="facilityPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clinicianLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clinicianPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileContent" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadlabRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadlabRequestResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LabReferenceNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorReport" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadLabAuthorization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PayerLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayerPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileContent" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadLabAuthorizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadLabAuthorizationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorReport" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTransactionFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTransactionFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DownloadTransactionFileResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNewTransactionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlTransactions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="callerLicense" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clinicianLicense" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LabReferenceNo" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionStatus" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="minRecordCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRecordCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SearchTransactionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="foundTransactions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTransactionDownloaded">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTransactionDownloadedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetTransactionDownloadedResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nationalId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LabReferenceNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLabTransactionResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlTransactions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabListTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nationalId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLabListTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLabListTransactionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlTransactions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadlabRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadlabRequest" />
+  </wsdl:message>
+  <wsdl:message name="UploadlabRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadlabRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadLabAuthorizationSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadLabAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="UploadLabAuthorizationSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadLabAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTransactionFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadTransactionFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTransactionFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadTransactionFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewTransactions" />
+  </wsdl:message>
+  <wsdl:message name="GetNewTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchTransactions" />
+  </wsdl:message>
+  <wsdl:message name="SearchTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTransactionDownloadedSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTransactionDownloaded" />
+  </wsdl:message>
+  <wsdl:message name="SetTransactionDownloadedSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTransactionDownloadedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLabTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLabTransaction" />
+  </wsdl:message>
+  <wsdl:message name="GetLabTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLabTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLabListTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLabListTransactions" />
+  </wsdl:message>
+  <wsdl:message name="GetLabListTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLabListTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LabValidateTransactionSoap">
+    <wsdl:operation name="UploadlabRequest">
+      <wsdl:input message="tns:UploadlabRequestSoapIn" />
+      <wsdl:output message="tns:UploadlabRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadLabAuthorization">
+      <wsdl:input message="tns:UploadLabAuthorizationSoapIn" />
+      <wsdl:output message="tns:UploadLabAuthorizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransactionFile">
+      <wsdl:input message="tns:DownloadTransactionFileSoapIn" />
+      <wsdl:output message="tns:DownloadTransactionFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTransactions">
+      <wsdl:input message="tns:GetNewTransactionsSoapIn" />
+      <wsdl:output message="tns:GetNewTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTransactions">
+      <wsdl:input message="tns:SearchTransactionsSoapIn" />
+      <wsdl:output message="tns:SearchTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTransactionDownloaded">
+      <wsdl:input message="tns:SetTransactionDownloadedSoapIn" />
+      <wsdl:output message="tns:SetTransactionDownloadedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabTransaction">
+      <wsdl:input message="tns:GetLabTransactionSoapIn" />
+      <wsdl:output message="tns:GetLabTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabListTransactions">
+      <wsdl:input message="tns:GetLabListTransactionsSoapIn" />
+      <wsdl:output message="tns:GetLabListTransactionsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LabValidateTransactionSoap" type="tns:LabValidateTransactionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadlabRequest">
+      <soap:operation soapAction="http://www.eClaimLink.ae/UploadlabRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadLabAuthorization">
+      <soap:operation soapAction="http://www.eClaimLink.ae/UploadLabAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransactionFile">
+      <soap:operation soapAction="http://www.eClaimLink.ae/DownloadTransactionFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTransactions">
+      <soap:operation soapAction="http://www.eClaimLink.ae/GetNewTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTransactions">
+      <soap:operation soapAction="http://www.eClaimLink.ae/SearchTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTransactionDownloaded">
+      <soap:operation soapAction="http://www.eClaimLink.ae/SetTransactionDownloaded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabTransaction">
+      <soap:operation soapAction="http://www.eClaimLink.ae/GetLabTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabListTransactions">
+      <soap:operation soapAction="http://www.eClaimLink.ae/GetLabListTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LabValidateTransactionSoap12" type="tns:LabValidateTransactionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadlabRequest">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/UploadlabRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadLabAuthorization">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/UploadLabAuthorization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransactionFile">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/DownloadTransactionFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTransactions">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/GetNewTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTransactions">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/SearchTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTransactionDownloaded">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/SetTransactionDownloaded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabTransaction">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/GetLabTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabListTransactions">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/GetLabListTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LabValidateTransaction">
+    <wsdl:port name="LabValidateTransactionSoap" binding="tns:LabValidateTransactionSoap">
+      <soap:address location="http://10.162.176.41/Labvalidatetransaction.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LabValidateTransactionSoap12" binding="tns:LabValidateTransactionSoap12">
+      <soap12:address location="http://10.162.176.41/Labvalidatetransaction.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

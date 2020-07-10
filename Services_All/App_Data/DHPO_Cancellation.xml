@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Prior.Request xsi:schemaLocation="http://www.eClaimLink.ae/DHD/CommonTypes.xsd
+http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.eClaimLink.ae/DHD/CommonTypes/PriorRequest.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <SenderID>DHA-F-3188019</SenderID>
+        <ReceiverID>INS012</ReceiverID>
+        <TransactionDate>11/09/2019 15:00</TransactionDate>
+        <RecordCount>1</RecordCount>
+        <DispositionFlag>PRODUCTION</DispositionFlag>
+    </Header>
+    <Authorization>
+        <Type>Cancellation</Type>
+        <ID>DHA-F-3188019-INS012-20190902132721</ID>
+        <IDPayer>PBM_41843701_11024</IDPayer>
+        <MemberID>OIG/ME-48654/E/8580325</MemberID>
+        <PayerID>INS012</PayerID>
+        <EmiratesIDNumber>784-1974-3539365-3</EmiratesIDNumber>
+        <DateOrdered>02/09/2019</DateOrdered>
+    </Authorization>
+</Prior.Request>

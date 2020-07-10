@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="84a5fea6-6ae7-458e-85e5-2bc53bd50fea" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://eservicesstg.dha.gov.ae:6000/Services/eClaimLink.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="dc64b33f-89a7-483a-9bbd-872587d038c0" SourceId="1" SourceUrl="https://eservicesstg.dha.gov.ae:6000/Services/eClaimLink.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="9b5d11d9-fdee-46a0-acf8-6021e807b174" SourceId="1" SourceUrl="https://eservicesstg.dha.gov.ae:6000/Services/eClaimLink.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="a395f1ea-4cf9-450e-9f35-f86434be0573" SourceId="1" SourceUrl="https://eservicesstg.dha.gov.ae:6000/Services/eClaimLink.svc/mex" />
+    <MetadataFile FileName="IntegrationService.Entities.xsd" MetadataType="Schema" ID="57ed98a2-be2c-4ebf-8449-d6e9e73d8193" SourceId="1" SourceUrl="https://eservicesstg.dha.gov.ae:6000/Services/eClaimLink.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.eClaimLink.ae/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.eClaimLink.ae/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.eClaimLink.ae/">
+      <s:element name="UploadRadRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="facilityLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="facilityPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clinicianLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clinicianPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileContent" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadRadRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadRadRequestResult" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="RadReferenceNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorReport" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadRadAuthorization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PayerLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PayerPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileContent" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadRadAuthorizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadRadAuthorizationResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorReport" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTransactionFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTransactionFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DownloadTransactionFileResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="file" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetNewTransactionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlTransactions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="callerLicense" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="clinicianLicense" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RadReferenceNo" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="transactionStatus" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionToDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="minRecordCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRecordCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SearchTransactionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="foundTransactions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTransactionDownloaded">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTransactionDownloadedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetTransactionDownloadedResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRadTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nationalId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RadReferenceNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRadTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRadTransactionResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlTransactions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRadListTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nationalId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRadListTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRadListTransactionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmlTransactions" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadRadRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadRadRequest" />
+  </wsdl:message>
+  <wsdl:message name="UploadRadRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadRadRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadRadAuthorizationSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadRadAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="UploadRadAuthorizationSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadRadAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTransactionFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadTransactionFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTransactionFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadTransactionFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewTransactions" />
+  </wsdl:message>
+  <wsdl:message name="GetNewTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchTransactions" />
+  </wsdl:message>
+  <wsdl:message name="SearchTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTransactionDownloadedSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTransactionDownloaded" />
+  </wsdl:message>
+  <wsdl:message name="SetTransactionDownloadedSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTransactionDownloadedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRadTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRadTransaction" />
+  </wsdl:message>
+  <wsdl:message name="GetRadTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRadTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRadListTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRadListTransactions" />
+  </wsdl:message>
+  <wsdl:message name="GetRadListTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRadListTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RadValidateTransactionSoap">
+    <wsdl:operation name="UploadRadRequest">
+      <wsdl:input message="tns:UploadRadRequestSoapIn" />
+      <wsdl:output message="tns:UploadRadRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadRadAuthorization">
+      <wsdl:input message="tns:UploadRadAuthorizationSoapIn" />
+      <wsdl:output message="tns:UploadRadAuthorizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransactionFile">
+      <wsdl:input message="tns:DownloadTransactionFileSoapIn" />
+      <wsdl:output message="tns:DownloadTransactionFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTransactions">
+      <wsdl:input message="tns:GetNewTransactionsSoapIn" />
+      <wsdl:output message="tns:GetNewTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTransactions">
+      <wsdl:input message="tns:SearchTransactionsSoapIn" />
+      <wsdl:output message="tns:SearchTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTransactionDownloaded">
+      <wsdl:input message="tns:SetTransactionDownloadedSoapIn" />
+      <wsdl:output message="tns:SetTransactionDownloadedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRadTransaction">
+      <wsdl:input message="tns:GetRadTransactionSoapIn" />
+      <wsdl:output message="tns:GetRadTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRadListTransactions">
+      <wsdl:input message="tns:GetRadListTransactionsSoapIn" />
+      <wsdl:output message="tns:GetRadListTransactionsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RadValidateTransactionSoap" type="tns:RadValidateTransactionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadRadRequest">
+      <soap:operation soapAction="http://www.eClaimLink.ae/UploadRadRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadRadAuthorization">
+      <soap:operation soapAction="http://www.eClaimLink.ae/UploadRadAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransactionFile">
+      <soap:operation soapAction="http://www.eClaimLink.ae/DownloadTransactionFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTransactions">
+      <soap:operation soapAction="http://www.eClaimLink.ae/GetNewTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTransactions">
+      <soap:operation soapAction="http://www.eClaimLink.ae/SearchTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTransactionDownloaded">
+      <soap:operation soapAction="http://www.eClaimLink.ae/SetTransactionDownloaded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRadTransaction">
+      <soap:operation soapAction="http://www.eClaimLink.ae/GetRadTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRadListTransactions">
+      <soap:operation soapAction="http://www.eClaimLink.ae/GetRadListTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RadValidateTransactionSoap12" type="tns:RadValidateTransactionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadRadRequest">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/UploadRadRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadRadAuthorization">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/UploadRadAuthorization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTransactionFile">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/DownloadTransactionFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewTransactions">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/GetNewTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTransactions">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/SearchTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTransactionDownloaded">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/SetTransactionDownloaded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRadTransaction">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/GetRadTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRadListTransactions">
+      <soap12:operation soapAction="http://www.eClaimLink.ae/GetRadListTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RadValidateTransaction">
+    <wsdl:port name="RadValidateTransactionSoap" binding="tns:RadValidateTransactionSoap">
+      <soap:address location="http://10.162.176.41/Radvalidatetransaction.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RadValidateTransactionSoap12" binding="tns:RadValidateTransactionSoap12">
+      <soap12:address location="http://10.162.176.41/Radvalidatetransaction.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

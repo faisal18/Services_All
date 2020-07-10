@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.pbmSwitch.com/DataDictionary/CommonTypes" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ClaimSubActivityStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Reversed" />
+      <xs:enumeration value="Dispensed" />
+      <xs:enumeration value="NotFound" />
+      <xs:enumeration value="NotDispensed" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

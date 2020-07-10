@@ -1,0 +1,44 @@
+{
+  "FileName": "test.json",
+  "PriorAuthorization": {
+    "Header": {
+      "SenderID": "INS026",
+      "ReceiverID": "DHA-F-0045687",
+      "TransactionDate": "28/01/2018 12:15",
+      "RecordCount": "1",
+      "DispositionFlag": "PRODUCTION",
+      "PayerID": "INS004"
+    },
+    "Authorization": {
+      "Result": "Yes",
+      "ID": "DHA-F-9999998-223311",
+      "IDPayer": "INS026",
+      "DenialCode": "ELIG-001",
+      "Start": "17/09/2017 12:13",
+      "End": "19/09/2017 12:13",
+      "Limit": "2",
+      "Activity": [
+        {
+          "ID": "9921208",
+          "Type": "5",
+          "Code": "0788-242401-2851",
+          "Quantity": "10",
+          "Net": "18.5",
+          "List": "1.0",
+          "PatientShare": "1.0",
+          "PaymentAmount": "1.0",
+          "DenialCode": "ELIG-001",
+		  "Comments":"hope you are doing well",
+          "Observation": [
+            {
+              "Type": "Text",
+              "Code": "Duration",
+              "Value": "1",
+              "ValueType": "Days"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

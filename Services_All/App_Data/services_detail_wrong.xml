@@ -1,0 +1,54 @@
+<Services>
+	<service name="clinician">
+		<username>erxclintest0122222222</username>
+		<password>pwderxclintest01</password>
+		<systemusername>ClinUserProd@!23</systemusername>
+		<systempassword>Clinpwd?where2.</systempassword>
+	</service>
+	<service name="erx">
+		<login>Thospital22222222</login>
+		<password>Thospital@123</password>
+	</service>
+	<service name="dhpo">
+		<login>Thospital22222222</login>
+		<password>Thospital@123</password>
+	</service>
+	<service name="pbmswitch">
+		<licenseid>DHA-F-999999822222222</licenseid>
+		<switchtype>1</switchtype>
+		<registrationkey>4A669508-460E-4FA9-8569-7AF832FC8F7A</registrationkey>
+	</service>
+	<service name="pbm_member">
+		<payerid></payerid>		
+		<memberid></memberid>		
+		<authKey></authKey>
+	</service>
+	<service name="pbm_payer">
+		<payerid>A02322222222</payerid>
+		<payerKey>8F4EE135-4AB0-78CD-8C02-E278BF933DD7</payerKey>
+		<transactiontype>1</transactiontype>
+		<region>3</region>
+	</service>
+	<service name="lmu">
+		<username>pbmlink22222222</username>
+		<key>vCUY7BqYl4j9HlRM49L56dcmL7zCjCJJ</key>
+		<listName>MasterPlans</listName>
+	</service>
+	<service name="ceed">
+		<user>admin22222222</user>
+		<password>dimen@sions20160601</password>
+	</service>
+	<service name="member">
+		<payerLogin>Tpayer22222222</payerLogin>
+		<payerPwd>Tpayer@2345</payerPwd>
+		<gender>1</gender>
+		<dateofBirth>25/01/1984</dateofBirth>
+		<nationality>119</nationality>
+		<passportNumber>006032421</passportNumber>
+		<viaSource>1</viaSource>
+	</service>
+	<service name="shafafiya">
+		<login>GULF DIAGNOSTIC CENTER22222222</login>
+		<pwd>gdc1</pwd>
+	</service>
+</Services>

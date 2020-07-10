@@ -1,0 +1,1548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E62ACA41-17AE-4A01-8EF7-C9697D475B97}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Services_All</RootNamespace>
+    <AssemblyName>Services_All</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Automation.Processes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Automation.Processes\Automation.Processes\bin\Release\Automation.Processes.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c6752e45808247c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSON.1.0.1\lib\net40\Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="App_Data\connections_RemoteDesktop.xml" />
+    <Content Include="App_Data\connections_server.xml" />
+    <Content Include="App_Data\DHPO_Cancellation.xml" />
+    <Content Include="App_Data\GraphQueries\Automation_GET_DHPO.sql" />
+    <Content Include="App_Data\GraphQueries\Automation_GET_PBMERX.sql" />
+    <Content Include="App_Data\GraphQueries\Automation_GET_App_Statuses.sql" />
+    <Content Include="App_Data\GraphQueries\GET_DHPO_Faisal.sql" />
+    <Content Include="App_Data\GraphQueries\GET_DHPO_Fazeel.sql" />
+    <Content Include="App_Data\GraphQueries\GET_ERX_Short.sql" />
+    <Content Include="App_Data\GraphQueries\GET_PBMLink_Short.sql" />
+    <Content Include="App_Data\GraphQueries\Automation_GET_Tran_Count.sql" />
+    <Content Include="App_Data\services_detail.xml" />
+    <Content Include="App_Data\services_detail_wrong.xml" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="App_Data\DHPO_IDOL\DHPO_Claim_Submission.xml" />
+    <Content Include="App_Data\DHPO_IDOL\DHPO_Erx_Auhtorization.xml" />
+    <Content Include="App_Data\DHPO_IDOL\DHPO_Erx_Request.xml" />
+    <Content Include="App_Data\DHPO_IDOL\DHPO_Prior_Authorization.xml" />
+    <Content Include="App_Data\DHPO_IDOL\DHPO_Prior_Request.xml" />
+    <Content Include="App_Data\DHPO_IDOL\DHPO_Remittance_Advice.xml" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\Web.config" />
+    <Content Include="App_Data\greenrain_users_profile.csv" />
+    <Content Include="App_Data\tpo_users_profile.csv" />
+    <Content Include="App_Data\TPO_IDOL\AuthorizationPostAuthorization.json" />
+    <Content Include="App_Data\TPO_IDOL\AuthorizationPostRequest.json" />
+    <Content Include="App_Data\TPO_IDOL\ClaimPostRemittance.json" />
+    <Content Include="App_Data\TPO_IDOL\ClaimPostSubmission - Laboratory-Dispense.json" />
+    <Content Include="App_Data\TPO_IDOL\ClaimPostSubmission - Prescription-Dispense.json" />
+    <Content Include="App_Data\TPO_IDOL\ClaimPostSubmission - Radiology-Dispense.json" />
+    <Content Include="App_Data\TPO_IDOL\ClaimPostSubmission.json" />
+    <Content Include="App_Data\TPO_IDOL\ClaimPostSubmission - Resubmission.json" />
+    <Content Include="App_Data\TPO_IDOL\ERXPostAuthorization.json" />
+    <Content Include="App_Data\TPO_IDOL\ERXPostRequest.json" />
+    <Content Include="App_Data\TPO_IDOL\LabPostAuthorization.json" />
+    <Content Include="App_Data\TPO_IDOL\LabPostRequest.json" />
+    <Content Include="App_Data\TPO_IDOL\RadPostAuthorization.json" />
+    <Content Include="App_Data\TPO_IDOL\RadPostRequest.json" />
+    <Content Include="App_Data\sql_master_query.csv" />
+    <Content Include="App_Data\dhpo_users_profile.csv" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <None Include="Service References\Ceed_Dhceg\configuration91.svcinfo" />
+    <None Include="Service References\Ceed_Dhceg\configuration.svcinfo" />
+    <None Include="Service References\Ceed_Dhceg\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Clinician_Authentication\configuration91.svcinfo" />
+    <None Include="Service References\Clinician_Authentication\configuration.svcinfo" />
+    <None Include="Service References\Clinician_Authentication\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DHCCHCPService\HCPService1.disco" />
+    <Content Include="Service References\DHCCHCPService\Services_All.DHCCHCPService.GetProfessionalsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHCCHCPService\Services_All.DHCCHCPService.HCP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHCCHCPService\Services_All.DHCCHCPService.Facility.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHCCHCPService\Services_All.DHCCHCPService.GetFacilitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\DHCCHCPService\HCPService1.wsdl" />
+    <None Include="Service References\DHCCHCPService_QA\HCPService.wsdl" />
+    <Content Include="Service References\DHCCHCPService_QA\Services_All.DHCCHCPService_QA.Facility.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHCCHCPService_QA\Services_All.DHCCHCPService_QA.GetFacilitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHCCHCPService_QA\Services_All.DHCCHCPService_QA.GetProfessionalsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHCCHCPService_QA\Services_All.DHCCHCPService_QA.HCP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\DHPO_Archive\ClaimsAndAuthorizationsArchive.wsdl" />
+    <None Include="Service References\DHCCHCPService\configuration91.svcinfo" />
+    <None Include="Service References\DHCCHCPService\configuration.svcinfo" />
+    <None Include="Service References\DHCCHCPService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DHCCHCPService_QA\HCPService.disco" />
+    <None Include="Service References\DHCCHCPService_QA\configuration91.svcinfo" />
+    <None Include="Service References\DHCCHCPService_QA\configuration.svcinfo" />
+    <None Include="Service References\DHCCHCPService_QA\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\DHPO_Archive\Services_All.DHPO_Archive.DownloadTransactionFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_Archive\Services_All.DHPO_Archive.SearchTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\DHPO_Archive_QA\ClaimsAndAuthorizationsArchive.wsdl" />
+    <Content Include="Service References\DHPO_Archive_QA\Services_All.DHPO_Archive_QA.DownloadTransactionFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_Archive_QA\Services_All.DHPO_Archive_QA.SearchTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_QA_Valid\Services_All.DHPO_QA_Valid.CheckForNewPriorAuthorizationTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_QA_Valid\Services_All.DHPO_QA_Valid.DownloadTransactionFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_QA_Valid\Services_All.DHPO_QA_Valid.GetNewPriorAuthorizationTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_QA_Valid\Services_All.DHPO_QA_Valid.GetNewTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_QA_Valid\Services_All.DHPO_QA_Valid.SearchTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_QA_Valid\Services_All.DHPO_QA_Valid.SetTransactionDownloadedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_QA_Valid\Services_All.DHPO_QA_Valid.UploadTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\DHPO_QA_Valid\validatetransactions.wsdl" />
+    <None Include="Service References\DHPO_Valid\configuration91.svcinfo" />
+    <None Include="Service References\DHPO_Valid\configuration.svcinfo" />
+    <None Include="Service References\DHPO_Valid\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ERX_ValidateTransactions\configuration91.svcinfo" />
+    <None Include="Service References\ERX_ValidateTransactions\configuration.svcinfo" />
+    <None Include="Service References\ERX_ValidateTransactions\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\IDAM_eClaimLink\IntegrationService.Entities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IDAM_eClaimLink\service.wsdl" />
+    <None Include="Service References\IDAM_eClaimLink\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IDAM_eClaimLink\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\IDAM_eClaimLink\Services_All.IDAM_eClaimLink.ResponseWCF.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\JenkinsICM\ICMServiceService.wsdl" />
+    <None Include="Service References\DHPO_Archive\configuration91.svcinfo" />
+    <None Include="Service References\DHPO_Archive\configuration.svcinfo" />
+    <None Include="Service References\DHPO_Archive\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DHPO_Archive_QA\configuration91.svcinfo" />
+    <None Include="Service References\DHPO_Archive_QA\configuration.svcinfo" />
+    <None Include="Service References\DHPO_Archive_QA\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DHPO_QA_Valid\validatetransactions.disco" />
+    <None Include="Service References\DHPO_QA_Valid\configuration91.svcinfo" />
+    <None Include="Service References\DHPO_QA_Valid\configuration.svcinfo" />
+    <None Include="Service References\DHPO_QA_Valid\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\IDAM_eClaimLink\configuration91.svcinfo" />
+    <None Include="Service References\IDAM_eClaimLink\configuration.svcinfo" />
+    <None Include="Service References\IDAM_eClaimLink\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\JenkinsICM\Services_All.JenkinsICM.proccessTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\JenkinsICM\Services_All.JenkinsICM.proccessTransactionResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Jordan_LAB\Labvalidatetransaction.wsdl" />
+    <Content Include="Service References\Jordan_LAB\Services_All.Jordan_LAB.DownloadTransactionFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_LAB\Services_All.Jordan_LAB.GetLabListTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_LAB\Services_All.Jordan_LAB.GetLabTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_LAB\Services_All.Jordan_LAB.GetNewTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_LAB\Services_All.Jordan_LAB.SearchTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_LAB\Services_All.Jordan_LAB.SetTransactionDownloadedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_LAB\Services_All.Jordan_LAB.UploadLabAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_LAB\Services_All.Jordan_LAB.UploadlabRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Jordan_RAD\Radvalidatetransaction.wsdl" />
+    <Content Include="Service References\Jordan_RAD\Services_All.Jordan_RAD.DownloadTransactionFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_RAD\Services_All.Jordan_RAD.GetNewTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_RAD\Services_All.Jordan_RAD.GetRadListTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_RAD\Services_All.Jordan_RAD.GetRadTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_RAD\Services_All.Jordan_RAD.SearchTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_RAD\Services_All.Jordan_RAD.SetTransactionDownloadedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_RAD\Services_All.Jordan_RAD.UploadRadAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Jordan_RAD\Services_All.Jordan_RAD.UploadRadRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Lmu_DataSynch\configuration91.svcinfo" />
+    <None Include="Service References\Lmu_DataSynch\configuration.svcinfo" />
+    <None Include="Service References\Lmu_DataSynch\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MedService\MedicalService.wsdl" />
+    <None Include="Service References\MedService\MedicalService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MedService\MedicalService1.wsdl" />
+    <None Include="Service References\MedService\MedicalService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Jordan_LAB\configuration91.svcinfo" />
+    <None Include="Service References\Jordan_LAB\configuration.svcinfo" />
+    <None Include="Service References\Jordan_LAB\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Jordan_RAD\configuration91.svcinfo" />
+    <None Include="Service References\Jordan_RAD\configuration.svcinfo" />
+    <None Include="Service References\Jordan_RAD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\MedService\Services_All.MedService.BenefitFeeGuideResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MedService\Services_All.MedService.MemberEligibilityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MedService\Services_All.MedService.PolicyDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\MedService\Services_All.MedService.PriorAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Member_Registration\configuration91.svcinfo" />
+    <None Include="Service References\Member_Registration\configuration.svcinfo" />
+    <None Include="Service References\Member_Registration\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\NahdiVPN\GI.wsdl" />
+    <None Include="Service References\NahdiVPN\GI.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NahdiVPN\GI1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\JenkinsICM\configuration91.svcinfo" />
+    <None Include="Service References\JenkinsICM\configuration.svcinfo" />
+    <None Include="Service References\JenkinsICM\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MedService\configuration91.svcinfo" />
+    <None Include="Service References\MedService\configuration.svcinfo" />
+    <None Include="Service References\MedService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\NahdiVPN\Services_All.NahdiVPN.GetBupaEligibilityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\NahdiVPN\Services_All.NahdiVPN.GetWaseelEligibilityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\NahdiVPN\Services_All.NahdiVPN.GetWaseelApprovalSubmissionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PbmS_Dimension\configuration91.svcinfo" />
+    <None Include="Service References\PbmS_Dimension\configuration.svcinfo" />
+    <None Include="Service References\PbmS_Dimension\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PbmS_Member\configuration91.svcinfo" />
+    <None Include="Service References\PbmS_Member\configuration.svcinfo" />
+    <None Include="Service References\PbmS_Member\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PbmS_Payer\configuration91.svcinfo" />
+    <None Include="Service References\PbmS_Payer\configuration.svcinfo" />
+    <None Include="Service References\PbmS_Payer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\Shafafiya\configuration91.svcinfo" />
+    <None Include="Service References\Shafafiya\configuration.svcinfo" />
+    <None Include="Service References\Shafafiya\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\NahdiVPN\GI.disco" />
+    <None Include="Service References\NahdiVPN\configuration91.svcinfo" />
+    <None Include="Service References\NahdiVPN\configuration.svcinfo" />
+    <None Include="Service References\NahdiVPN\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+    <Content Include="Utilities_UI\ACM_Parser.aspx" />
+    <Content Include="Utilities_UI\AIMSDeployment.aspx" />
+    <Content Include="Utilities_UI\Aims_Execution.aspx" />
+    <Content Include="Utilities_UI\Clinician_Insertion.aspx" />
+    <Content Include="Utilities_UI\DHA_Sheryan_GetProfessional_Utlity.aspx" />
+    <Content Include="Utilities_UI\DHA_Sheryan_Professionals.aspx" />
+    <Content Include="Utilities_UI\DHCC_Clinician_Password_Recovery.aspx" />
+    <Content Include="Utilities_UI\DHCC_Client.aspx" />
+    <Content Include="Utilities_UI\DHCC_Client_AutoUpload.aspx" />
+    <Content Include="Utilities_UI\DHPO_Cancellation.aspx" />
+    <Content Include="Utilities_UI\DHPO_WebService.aspx" />
+    <Content Include="Utilities_UI\IDAM_Integration.aspx" />
+    <Content Include="Utilities_UI\test_Dashboard.aspx" />
+    <Content Include="Utilities_UI\Dash_UploadData.aspx" />
+    <Content Include="Utilities_UI\Dhpo_archiving.aspx" />
+    <Content Include="Utilities_UI\Greenrain.aspx" />
+    <Content Include="Utilities_UI\JenkinsAutomation.aspx" />
+    <Content Include="Utilities_UI\JordanForm_Lab.aspx" />
+    <Content Include="Utilities_UI\JordanForm_Rad.aspx" />
+    <Content Include="Utilities_UI\NahdiVPN.aspx" />
+    <Content Include="Utilities_UI\Provider_Registration.aspx" />
+    <Content Include="Utilities_UI\TPO_API.aspx" />
+    <Content Include="Utilities_UI\Validate_Services.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Service References\Ceed_Dhceg\gateway.wsdl" />
+    <Content Include="Service References\Ceed_Dhceg\Services_All.Ceed_Dhceg.CreateUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Ceed_Dhceg\Services_All.Ceed_Dhceg.DHCEGResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Ceed_Dhceg\Services_All.Ceed_Dhceg.DHCEG_ClaimsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Ceed_Dhceg\Services_All.Ceed_Dhceg.DHCEG_UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Ceed_Dhceg\Services_All.Ceed_Dhceg.GetDHCEGValueServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Ceed_Dhceg\Services_All.Ceed_Dhceg.responseClaimEdit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Ceed_Dhceg\Services_All.Ceed_Dhceg.UpdateUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Clinician_Authentication\ClinicianAuthontication.wsdl" />
+    <Content Include="Service References\Clinician_Authentication\Services_All.Clinician_Authentication.AuthonticateClinicianResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Clinician_Authentication\Services_All.Clinician_Authentication.AuthonticateCliniciansResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Clinician_Authentication\Services_All.Clinician_Authentication.GetCliniciansResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Clinician_Authentication\Services_All.Clinician_Authentication.HelloTestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Clinician_Authentication\Services_All.Clinician_Authentication.ResponseWCF.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_Valid\Services_All.DHPO_Valid.CheckForNewPriorAuthorizationTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_Valid\Services_All.DHPO_Valid.DownloadTransactionFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_Valid\Services_All.DHPO_Valid.GetNewPriorAuthorizationTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_Valid\Services_All.DHPO_Valid.GetNewTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_Valid\Services_All.DHPO_Valid.SearchTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_Valid\Services_All.DHPO_Valid.SetTransactionDownloadedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DHPO_Valid\Services_All.DHPO_Valid.UploadTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\DHPO_Valid\ValidateTransactions.wsdl" />
+    <None Include="Service References\ERX_ValidateTransactions\eRxValidateTransaction.wsdl" />
+    <Content Include="Service References\ERX_ValidateTransactions\Services_All.ERX_ValidateTransactions.DownloadTransactionFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ERX_ValidateTransactions\Services_All.ERX_ValidateTransactions.GeteRxTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ERX_ValidateTransactions\Services_All.ERX_ValidateTransactions.GetNewTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ERX_ValidateTransactions\Services_All.ERX_ValidateTransactions.SearchTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ERX_ValidateTransactions\Services_All.ERX_ValidateTransactions.SetTransactionDownloadedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ERX_ValidateTransactions\Services_All.ERX_ValidateTransactions.UploadERxAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ERX_ValidateTransactions\Services_All.ERX_ValidateTransactions.UploadERxRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Lmu_DataSynch\DataSyncServiceService.wsdl" />
+    <Content Include="Service References\Lmu_DataSynch\Services_All.Lmu_DataSynch.changesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Lmu_DataSynch\Services_All.Lmu_DataSynch.currentVersionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Lmu_DataSynch\Services_All.Lmu_DataSynch.findChangesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Lmu_DataSynch\Services_All.Lmu_DataSynch.findRecordsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Lmu_DataSynch\Services_All.Lmu_DataSynch.recordsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Lmu_DataSynch\Services_All.Lmu_DataSynch.versionResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Member_Registration\MemberRegistration.wsdl" />
+    <None Include="Service References\Member_Registration\MemberRegistration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Member_Registration\MemberRegistration1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Member_Registration\MemberRegistration2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\Member_Registration\Services_All.Member_Registration.DownloadReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Member_Registration\Services_All.Member_Registration.DownloadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Member_Registration\Services_All.Member_Registration.MemberInsuranceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Member_Registration\Services_All.Member_Registration.UploadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Member_Registration\Services_All.Member_Registration.ValidateMemberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PbmS_Dimension\DimensionsPbmWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PbmS_Dimension\DimensionsPbmWS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PbmS_Dimension\DimensionsPbmWS2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PbmS_Dimension\DimensionsPbmWSService.wsdl" />
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.authorizationsFeedback.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.cancelRequestByIdPayerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.cancelRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.ClaimSubActivityStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.confirmAuthrizationRecievedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.deletePBMLinkProviderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.deletePBMLinkUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.dispencePrescriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.editPBMLinkUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.editProviderLicenseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.editProviderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.editProviderTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.editUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.feedbackResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.getActivityStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.getAuthorizationStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.getMemeberDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.getNewAuthorizationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.getPayerMemberDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.getProcessingStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.getTransactionStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.memberRecordDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.PostPriorRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.registerProviderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.registerUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.reverseSingleActivityAnyTimeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.reverseSingleActivityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.submitNonSwitchPayerClaimsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.submitProviderClaimsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.triggerLMUResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Dimension\Services_All.PbmS_Dimension.uploadLinkPriorRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PbmS_Member\MemberUpdateWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PbmS_Member\MemberUpdateWSService.wsdl" />
+    <Content Include="Service References\PbmS_Member\Services_All.PbmS_Member.feedbackResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Member\Services_All.PbmS_Member.getMemberDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Member\Services_All.PbmS_Member.memberDetailsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Member\Services_All.PbmS_Member.updateMemberExclusionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Member\Services_All.PbmS_Member.updateMemebrBatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Member\Services_All.PbmS_Member.updateMemebrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\PbmS_Payer\PayerIntegrationWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PbmS_Payer\PayerIntegrationWS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PbmS_Payer\PayerIntegrationWS2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PbmS_Payer\PayerIntegrationWSService.wsdl" />
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.cancelPriorAuthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.claimSubmissionBatch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.confirmBatchReceivedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.confirmReversedActivitiesDownloadedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.downloadSubmissionDetailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.downloadSubmissionDetailResponseReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.feedbackResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.findTransactionsByBatchIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.getInsuredMemeberDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.getMemberDetailsByTpaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.getNewCanceledRequestsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.getNewClaimsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.getNewPriorAuthorizationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.getNewPriorRequestsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.getNonDownloadedBatchIDsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.getNonDownloadedReversedActivitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.getPriorAuthByRequestIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.getPriorAuthByRequestIDResponseReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.memberDetailsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.memberRecordDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.priorAuthorizationBatch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.priorRequestBatch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.processERXRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.processERXRequestResponseReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.processPriorRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.processPriorRequestResponseReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.reImpursementFeedBack.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.reverseActResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.reversedActivity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.submitReimpursementClaimsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.transactionBatch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.uploadClaimSubmissionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.uploadPostOfficeRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PbmS_Payer\Services_All.PbmS_Payer.uploadPriorRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Shafafiya\Services_All.Shafafiya.AddDRGToEClaimResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Shafafiya\Services_All.Shafafiya.CheckForNewPriorAuthorizationTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Shafafiya\Services_All.Shafafiya.DownloadTransactionFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Shafafiya\Services_All.Shafafiya.GetDRGDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Shafafiya\Services_All.Shafafiya.GetNewPriorAuthorizationTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Shafafiya\Services_All.Shafafiya.GetNewTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Shafafiya\Services_All.Shafafiya.GetPrescriptionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Shafafiya\Services_All.Shafafiya.SearchTransactionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Shafafiya\Services_All.Shafafiya.SetTransactionDownloadedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Shafafiya\Services_All.Shafafiya.UploadTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Shafafiya\webservices1.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExtraClasses\ACM_LogParser.cs" />
+    <Compile Include="ExtraClasses\Aims_Deployment.cs" />
+    <Compile Include="ExtraClasses\Connections.cs" />
+    <Compile Include="ExtraClasses\Dhpo_archiving.cs" />
+    <Compile Include="ExtraClasses\DHPO_Cancellation.cs" />
+    <Compile Include="ExtraClasses\DHPO_WebService.cs" />
+    <Compile Include="ExtraClasses\EncryptionDecryptionHelper.cs" />
+    <Compile Include="ExtraClasses\IDAM_Integration.cs" />
+    <Compile Include="ExtraClasses\JenkinsAutomation.cs" />
+    <Compile Include="ExtraClasses\JordanCS_LAB.cs" />
+    <Compile Include="ExtraClasses\JordanCS_RAD.cs" />
+    <Compile Include="ExtraClasses\Monitoring_Transactions.cs" />
+    <Compile Include="ExtraClasses\Monitoring_UploadData.cs" />
+    <Compile Include="ExtraClasses\NahdiVpn.cs" />
+    <Compile Include="ExtraClasses\Provider_Registration.cs" />
+    <Compile Include="ExtraClasses\SendEmail.cs" />
+    <Compile Include="ExtraClasses\shafafiya_messenger.cs" />
+    <Compile Include="ExtraClasses\TPO_API_Call.cs" />
+    <Compile Include="ExtraClasses\WebService_Tracer.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Logger.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Ceed_Dhceg\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Clinician_Authentication\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DHCCHCPService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DHCCHCPService_QA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DHPO_Archive\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DHPO_Archive_QA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DHPO_QA_Valid\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DHPO_Valid\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ERX_ValidateTransactions\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\IDAM_eClaimLink\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\JenkinsICM\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Jordan_LAB\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Jordan_RAD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Lmu_DataSynch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MedService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Member_Registration\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NahdiVPN\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PbmS_Dimension\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PbmS_Member\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PbmS_Payer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Shafafiya\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utilities_UI\ACM_Parser.aspx.cs">
+      <DependentUpon>ACM_Parser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\ACM_Parser.aspx.designer.cs">
+      <DependentUpon>ACM_Parser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\AIMSDeployment.aspx.cs">
+      <DependentUpon>AIMSDeployment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\AIMSDeployment.aspx.designer.cs">
+      <DependentUpon>AIMSDeployment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\Aims_Execution.aspx.cs">
+      <DependentUpon>Aims_Execution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\Aims_Execution.aspx.designer.cs">
+      <DependentUpon>Aims_Execution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\Clinician_Insertion.aspx.cs">
+      <DependentUpon>Clinician_Insertion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\Clinician_Insertion.aspx.designer.cs">
+      <DependentUpon>Clinician_Insertion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\DHA_Sheryan_GetProfessional_Utlity.aspx.cs">
+      <DependentUpon>DHA_Sheryan_GetProfessional_Utlity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\DHA_Sheryan_GetProfessional_Utlity.aspx.designer.cs">
+      <DependentUpon>DHA_Sheryan_GetProfessional_Utlity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\DHA_Sheryan_Professionals.aspx.cs">
+      <DependentUpon>DHA_Sheryan_Professionals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\DHA_Sheryan_Professionals.aspx.designer.cs">
+      <DependentUpon>DHA_Sheryan_Professionals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\DHCC_Clinician_Password_Recovery.aspx.cs">
+      <DependentUpon>DHCC_Clinician_Password_Recovery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\DHCC_Clinician_Password_Recovery.aspx.designer.cs">
+      <DependentUpon>DHCC_Clinician_Password_Recovery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\DHCC_Client.aspx.cs">
+      <DependentUpon>DHCC_Client.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\DHCC_Client.aspx.designer.cs">
+      <DependentUpon>DHCC_Client.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\DHCC_Client_AutoUpload.aspx.cs">
+      <DependentUpon>DHCC_Client_AutoUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\DHCC_Client_AutoUpload.aspx.designer.cs">
+      <DependentUpon>DHCC_Client_AutoUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\DHPO_Cancellation.aspx.cs">
+      <DependentUpon>DHPO_Cancellation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\DHPO_Cancellation.aspx.designer.cs">
+      <DependentUpon>DHPO_Cancellation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\DHPO_WebService.aspx.cs">
+      <DependentUpon>DHPO_WebService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\DHPO_WebService.aspx.designer.cs">
+      <DependentUpon>DHPO_WebService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\IDAM_Integration.aspx.cs">
+      <DependentUpon>IDAM_Integration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\IDAM_Integration.aspx.designer.cs">
+      <DependentUpon>IDAM_Integration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\test_Dashboard.aspx.cs">
+      <DependentUpon>test_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\test_Dashboard.aspx.designer.cs">
+      <DependentUpon>test_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\Dash_UploadData.aspx.cs">
+      <DependentUpon>Dash_UploadData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\Dash_UploadData.aspx.designer.cs">
+      <DependentUpon>Dash_UploadData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\Dhpo_archiving.aspx.cs">
+      <DependentUpon>Dhpo_archiving.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\Dhpo_archiving.aspx.designer.cs">
+      <DependentUpon>Dhpo_archiving.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\Greenrain.aspx.cs">
+      <DependentUpon>Greenrain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\Greenrain.aspx.designer.cs">
+      <DependentUpon>Greenrain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\JenkinsAutomation.aspx.cs">
+      <DependentUpon>JenkinsAutomation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\JenkinsAutomation.aspx.designer.cs">
+      <DependentUpon>JenkinsAutomation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\JordanForm_Lab.aspx.cs">
+      <DependentUpon>JordanForm_Lab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\JordanForm_Lab.aspx.designer.cs">
+      <DependentUpon>JordanForm_Lab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\JordanForm_Rad.aspx.cs">
+      <DependentUpon>JordanForm_Rad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\JordanForm_Rad.aspx.designer.cs">
+      <DependentUpon>JordanForm_Rad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\NahdiVPN.aspx.cs">
+      <DependentUpon>NahdiVPN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\NahdiVPN.aspx.designer.cs">
+      <DependentUpon>NahdiVPN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\Provider_Registration.aspx.cs">
+      <DependentUpon>Provider_Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\Provider_Registration.aspx.designer.cs">
+      <DependentUpon>Provider_Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\TPO_API.aspx.cs">
+      <DependentUpon>TPO_API.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\TPO_API.aspx.designer.cs">
+      <DependentUpon>TPO_API.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\Validate_Services.aspx.cs">
+      <DependentUpon>Validate_Services.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\Validate_Services.aspx.designer.cs">
+      <DependentUpon>Validate_Services.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExtraClasses\Validate_Service.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Ceed_Dhceg\" />
+    <WCFMetadataStorage Include="Service References\Clinician_Authentication\" />
+    <WCFMetadataStorage Include="Service References\DHCCHCPService\" />
+    <WCFMetadataStorage Include="Service References\DHCCHCPService_QA\" />
+    <WCFMetadataStorage Include="Service References\DHPO_Archive\" />
+    <WCFMetadataStorage Include="Service References\DHPO_Archive_QA\" />
+    <WCFMetadataStorage Include="Service References\DHPO_QA_Valid\" />
+    <WCFMetadataStorage Include="Service References\DHPO_Valid\" />
+    <WCFMetadataStorage Include="Service References\ERX_ValidateTransactions\" />
+    <WCFMetadataStorage Include="Service References\IDAM_eClaimLink\" />
+    <WCFMetadataStorage Include="Service References\JenkinsICM\" />
+    <WCFMetadataStorage Include="Service References\Jordan_LAB\" />
+    <WCFMetadataStorage Include="Service References\Jordan_RAD\" />
+    <WCFMetadataStorage Include="Service References\Lmu_DataSynch\" />
+    <WCFMetadataStorage Include="Service References\MedService\" />
+    <WCFMetadataStorage Include="Service References\Member_Registration\" />
+    <WCFMetadataStorage Include="Service References\NahdiVPN\" />
+    <WCFMetadataStorage Include="Service References\PbmS_Dimension\" />
+    <WCFMetadataStorage Include="Service References\PbmS_Member\" />
+    <WCFMetadataStorage Include="Service References\PbmS_Payer\" />
+    <WCFMetadataStorage Include="Service References\Shafafiya\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54053</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54053/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

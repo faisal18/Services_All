@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns1="http://www.haad.ae/DataDictionary/CommonTypes" xmlns:tns="http://ws.bus.dimensions.com/" xmlns:ns2="http://www.pbmSwitch.com/DataDictionary/CommonTypes" targetNamespace="http://ws.bus.dimensions.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pbmswitch.com:9090/DimensionsPbmWS?xsd=2" namespace="http://www.haad.ae/DataDictionary/CommonTypes" />
+  <xs:import schemaLocation="http://pbmswitch.com:9090/DimensionsPbmWS?xsd=1" namespace="http://www.pbmSwitch.com/DataDictionary/CommonTypes" />
+  <xs:element name="Claim.Submission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SenderID" type="xs:string" />
+              <xs:element name="ReceiverID" type="xs:string" />
+              <xs:element name="TransactionDate" type="xs:string" />
+              <xs:element name="RecordCount" type="xs:integer" />
+              <xs:element name="DispositionFlag" type="ns1:HeaderDispositionFlag" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Claim">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" type="xs:string" />
+              <xs:element minOccurs="0" name="IDPayer" type="xs:string" />
+              <xs:element minOccurs="0" name="MemberID" type="xs:string" />
+              <xs:element name="PayerID" type="xs:string" />
+              <xs:element name="ProviderID" type="xs:string" />
+              <xs:element name="EmiratesIDNumber" type="xs:string" />
+              <xs:element name="Gross" type="xs:double" />
+              <xs:element name="PatientShare" type="xs:double" />
+              <xs:element name="Net" type="xs:double" />
+              <xs:element maxOccurs="unbounded" name="Encounter">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FacilityID" type="xs:string" />
+                    <xs:element name="Type" type="xs:integer" />
+                    <xs:element name="PatientID" type="xs:string" />
+                    <xs:element name="Start" type="xs:string" />
+                    <xs:element minOccurs="0" name="End" type="xs:string" />
+                    <xs:element minOccurs="0" name="StartType" type="xs:integer" />
+                    <xs:element minOccurs="0" name="EndType" type="xs:integer" />
+                    <xs:element minOccurs="0" name="TransferSource" type="xs:string" />
+                    <xs:element minOccurs="0" name="TransferDestination" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="Diagnosis">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Type" type="ns1:DiagnosisType" />
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="Activity">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="ID" type="xs:string" />
+                    <xs:element name="Start" type="xs:string" />
+                    <xs:element name="Type" type="xs:integer" />
+                    <xs:element name="Code" type="xs:string" />
+                    <xs:element name="Quantity" type="xs:double" />
+                    <xs:element name="Net" type="xs:double" />
+                    <xs:element name="OrderingClinician" type="xs:string" />
+                    <xs:element name="Clinician" type="xs:string" />
+                    <xs:element minOccurs="0" name="PriorAuthorizationID" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Observation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Type" type="ns1:ObservationType" />
+                          <xs:element name="Code" type="xs:string" />
+                          <xs:element minOccurs="0" name="Value" type="xs:string" />
+                          <xs:element minOccurs="0" name="ValueType" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Resubmission">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Type" type="ns1:ResubmissionType" />
+                    <xs:element name="Comment" type="xs:string" />
+                    <xs:element minOccurs="0" name="Attachment" type="xs:base64Binary" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Contract">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="0" name="PackageName" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DhcTlException" type="tns:DhcTlException" />
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="PostPriorRequest" type="tns:PostPriorRequest" />
+  <xs:element name="PostPriorRequestResponse" type="tns:PostPriorRequestResponse" />
+  <xs:element name="Prior.Authorization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SenderID" type="xs:string" />
+              <xs:element name="ReceiverID" type="xs:string" />
+              <xs:element name="TransactionDate" type="xs:string" />
+              <xs:element name="RecordCount" type="xs:integer" />
+              <xs:element name="DispositionFlag" type="ns1:HeaderDispositionFlag" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Authorization">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Result" type="xs:string" />
+              <xs:element name="ID" type="xs:string" />
+              <xs:element minOccurs="0" name="IDPayer" type="xs:string" />
+              <xs:element minOccurs="0" name="DenialCode" type="xs:string" />
+              <xs:element name="Start" type="xs:string" />
+              <xs:element name="End" type="xs:string" />
+              <xs:element minOccurs="0" name="Limit" type="xs:double" />
+              <xs:element minOccurs="0" name="Comments" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID" type="xs:string" />
+                    <xs:element name="Type" type="xs:integer" />
+                    <xs:element name="Code" type="xs:string" />
+                    <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+                    <xs:element minOccurs="0" name="Net" type="xs:double" />
+                    <xs:element minOccurs="0" name="List" type="xs:double" />
+                    <xs:element minOccurs="0" name="PatientShare" type="xs:double" />
+                    <xs:element minOccurs="0" name="PaymentAmount" type="xs:double" />
+                    <xs:element minOccurs="0" name="DenialCode" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Observation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Type" type="ns1:ObservationType" />
+                          <xs:element name="Code" type="xs:string" />
+                          <xs:element name="Value" type="xs:string" />
+                          <xs:element name="ValueType" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Prior.Request">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SenderID" type="xs:string" />
+              <xs:element name="ReceiverID" type="xs:string" />
+              <xs:element name="TransactionDate" type="xs:string" />
+              <xs:element name="RecordCount" type="xs:integer" />
+              <xs:element name="DispositionFlag" type="ns1:HeaderDispositionFlag" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Authorization">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Type" type="ns1:AuthorizationType" />
+              <xs:element name="ID" type="xs:string" />
+              <xs:element minOccurs="0" name="IDPayer" type="xs:string" />
+              <xs:element name="MemberID" type="xs:string" />
+              <xs:element name="PayerID" type="xs:string" />
+              <xs:element name="EmiratesIDNumber" type="xs:string" />
+              <xs:element name="DateOrdered" type="xs:string" />
+              <xs:element minOccurs="0" name="Encounter">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="FacilityID" type="xs:string" />
+                    <xs:element minOccurs="0" name="Type" type="xs:integer" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="Diagnosis">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Type" type="ns1:DiagnosisType" />
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID" type="xs:string" />
+                    <xs:element minOccurs="0" name="Start" type="xs:string" />
+                    <xs:element name="Type" type="xs:integer" />
+                    <xs:element name="Code" type="xs:string" />
+                    <xs:element name="Quantity" type="xs:double" />
+                    <xs:element name="Net" type="xs:double" />
+                    <xs:element minOccurs="0" name="Clinician" type="xs:string" />
+                    <xs:element minOccurs="0" maxOccurs="unbounded" name="Observation">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Type" type="ns1:ObservationType" />
+                          <xs:element name="Code" type="xs:string" />
+                          <xs:element name="Value" type="xs:string" />
+                          <xs:element name="ValueType" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Resubmission">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Type" type="ns1:ResubmissionType" />
+                    <xs:element name="Comment" type="xs:string" />
+                    <xs:element minOccurs="0" name="Attachment" type="xs:base64Binary" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cancelRequest" type="tns:cancelRequest" />
+  <xs:element name="cancelRequestByIdPayer" type="tns:cancelRequestByIdPayer" />
+  <xs:element name="cancelRequestByIdPayerResponse" type="tns:cancelRequestByIdPayerResponse" />
+  <xs:element name="cancelRequestResponse" type="tns:cancelRequestResponse" />
+  <xs:element name="confirmAuthrizationRecieved" type="tns:confirmAuthrizationRecieved" />
+  <xs:element name="confirmAuthrizationRecievedResponse" type="tns:confirmAuthrizationRecievedResponse" />
+  <xs:element name="deletePBMLinkProvider" type="tns:deletePBMLinkProvider" />
+  <xs:element name="deletePBMLinkProviderResponse" type="tns:deletePBMLinkProviderResponse" />
+  <xs:element name="deletePBMLinkUser" type="tns:deletePBMLinkUser" />
+  <xs:element name="deletePBMLinkUserResponse" type="tns:deletePBMLinkUserResponse" />
+  <xs:element name="dispencePrescription" type="tns:dispencePrescription" />
+  <xs:element name="dispencePrescriptionResponse" type="tns:dispencePrescriptionResponse" />
+  <xs:element name="editPBMLinkUser" type="tns:editPBMLinkUser" />
+  <xs:element name="editPBMLinkUserResponse" type="tns:editPBMLinkUserResponse" />
+  <xs:element name="editProvider" type="tns:editProvider" />
+  <xs:element name="editProviderLicense" type="tns:editProviderLicense" />
+  <xs:element name="editProviderLicenseResponse" type="tns:editProviderLicenseResponse" />
+  <xs:element name="editProviderResponse" type="tns:editProviderResponse" />
+  <xs:element name="editProviderType" type="tns:editProviderType" />
+  <xs:element name="editProviderTypeResponse" type="tns:editProviderTypeResponse" />
+  <xs:element name="editUser" type="tns:editUser" />
+  <xs:element name="editUserResponse" type="tns:editUserResponse" />
+  <xs:element name="getActivityStatus" type="tns:getActivityStatus" />
+  <xs:element name="getActivityStatusResponse" type="tns:getActivityStatusResponse" />
+  <xs:element name="getAuthorizationStatus" type="tns:getAuthorizationStatus" />
+  <xs:element name="getAuthorizationStatusResponse" type="tns:getAuthorizationStatusResponse" />
+  <xs:element name="getMemeberDetails" type="tns:getMemeberDetails" />
+  <xs:element name="getMemeberDetailsResponse" type="tns:getMemeberDetailsResponse" />
+  <xs:element name="getNewAuthorizations" type="tns:getNewAuthorizations" />
+  <xs:element name="getNewAuthorizationsResponse" type="tns:getNewAuthorizationsResponse" />
+  <xs:element name="getPayerMemberDetails" type="tns:getPayerMemberDetails" />
+  <xs:element name="getPayerMemberDetailsResponse" type="tns:getPayerMemberDetailsResponse" />
+  <xs:element name="getProcessingStatus" type="tns:getProcessingStatus" />
+  <xs:element name="getProcessingStatusResponse" type="tns:getProcessingStatusResponse" />
+  <xs:element name="getTransactionStatus" type="tns:getTransactionStatus" />
+  <xs:element name="getTransactionStatusResponse" type="tns:getTransactionStatusResponse" />
+  <xs:element name="refreshSystemCache" type="tns:refreshSystemCache" />
+  <xs:element name="registerProvider" type="tns:registerProvider" />
+  <xs:element name="registerProviderResponse" type="tns:registerProviderResponse" />
+  <xs:element name="registerUser" type="tns:registerUser" />
+  <xs:element name="registerUserResponse" type="tns:registerUserResponse" />
+  <xs:element name="reverseSingleActivity" type="tns:reverseSingleActivity" />
+  <xs:element name="reverseSingleActivityAnyTime" type="tns:reverseSingleActivityAnyTime" />
+  <xs:element name="reverseSingleActivityAnyTimeResponse" type="tns:reverseSingleActivityAnyTimeResponse" />
+  <xs:element name="reverseSingleActivityResponse" type="tns:reverseSingleActivityResponse" />
+  <xs:element name="submitNonSwitchPayerClaims" type="tns:submitNonSwitchPayerClaims" />
+  <xs:element name="submitNonSwitchPayerClaimsResponse" type="tns:submitNonSwitchPayerClaimsResponse" />
+  <xs:element name="submitProviderClaims" type="tns:submitProviderClaims" />
+  <xs:element name="submitProviderClaimsResponse" type="tns:submitProviderClaimsResponse" />
+  <xs:element name="triggerLMU" type="tns:triggerLMU" />
+  <xs:element name="triggerLMUResponse" type="tns:triggerLMUResponse" />
+  <xs:element name="uploadLinkPriorRequest" type="tns:uploadLinkPriorRequest" />
+  <xs:element name="uploadLinkPriorRequestResponse" type="tns:uploadLinkPriorRequestResponse" />
+  <xs:complexType name="cancelRequestByIdPayer">
+    <xs:sequence>
+      <xs:element name="requestIDPayer" type="xs:long" />
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelRequestByIdPayerResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="feedbackResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="value" type="xs:int" />
+      <xs:element minOccurs="0" name="MSG" type="xs:string" />
+      <xs:element minOccurs="0" name="XmlFileName" type="xs:string" />
+      <xs:element minOccurs="0" name="errorDetails" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dispencePrescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="claimSubmission">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SenderID" type="xs:string" />
+                  <xs:element name="ReceiverID" type="xs:string" />
+                  <xs:element name="TransactionDate" type="xs:string" />
+                  <xs:element name="RecordCount" type="xs:integer" />
+                  <xs:element name="DispositionFlag" type="ns1:HeaderDispositionFlag" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element maxOccurs="unbounded" name="Claim">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="IDPayer" type="xs:string" />
+                  <xs:element minOccurs="0" name="MemberID" type="xs:string" />
+                  <xs:element name="PayerID" type="xs:string" />
+                  <xs:element name="ProviderID" type="xs:string" />
+                  <xs:element name="EmiratesIDNumber" type="xs:string" />
+                  <xs:element name="Gross" type="xs:double" />
+                  <xs:element name="PatientShare" type="xs:double" />
+                  <xs:element name="Net" type="xs:double" />
+                  <xs:element maxOccurs="unbounded" name="Encounter">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="FacilityID" type="xs:string" />
+                        <xs:element name="Type" type="xs:integer" />
+                        <xs:element name="PatientID" type="xs:string" />
+                        <xs:element name="Start" type="xs:string" />
+                        <xs:element minOccurs="0" name="End" type="xs:string" />
+                        <xs:element minOccurs="0" name="StartType" type="xs:integer" />
+                        <xs:element minOccurs="0" name="EndType" type="xs:integer" />
+                        <xs:element minOccurs="0" name="TransferSource" type="xs:string" />
+                        <xs:element minOccurs="0" name="TransferDestination" type="xs:string" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="Diagnosis">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Type" type="ns1:DiagnosisType" />
+                        <xs:element name="Code" type="xs:string" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element maxOccurs="unbounded" name="Activity">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="ID" type="xs:string" />
+                        <xs:element name="Start" type="xs:string" />
+                        <xs:element name="Type" type="xs:integer" />
+                        <xs:element name="Code" type="xs:string" />
+                        <xs:element name="Quantity" type="xs:double" />
+                        <xs:element name="Net" type="xs:double" />
+                        <xs:element name="OrderingClinician" type="xs:string" />
+                        <xs:element name="Clinician" type="xs:string" />
+                        <xs:element minOccurs="0" name="PriorAuthorizationID" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Observation">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Type" type="ns1:ObservationType" />
+                              <xs:element name="Code" type="xs:string" />
+                              <xs:element minOccurs="0" name="Value" type="xs:string" />
+                              <xs:element minOccurs="0" name="ValueType" type="xs:string" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="Resubmission">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Type" type="ns1:ResubmissionType" />
+                        <xs:element name="Comment" type="xs:string" />
+                        <xs:element minOccurs="0" name="Attachment" type="xs:base64Binary" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="Contract">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element minOccurs="0" name="PackageName" type="xs:string" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dispencePrescriptionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="submitNonSwitchPayerClaims">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="submitNonSwitchPayerClaimsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editProviderType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="licenseId" type="xs:string" />
+      <xs:element name="switchType" type="xs:int" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editProviderTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestAuthorizationID" type="xs:string" />
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelRequestResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pbmNpiCode" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="licenseId" type="xs:string" />
+      <xs:element minOccurs="0" name="region" type="xs:string" />
+      <xs:element minOccurs="0" name="haadUsername" type="xs:string" />
+      <xs:element minOccurs="0" name="haadPassword" type="xs:string" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editProviderResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="refreshSystemCache">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deletePBMLinkProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deletePBMLinkProviderResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMemeberDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MemberNo" type="xs:string" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMemeberDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:memberRecordDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="memberRecordDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="divisionId" type="xs:string" />
+      <xs:element minOccurs="0" name="effectiveFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="effectiveTo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="firstName" type="xs:string" />
+      <xs:element name="gender" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="groupId" type="xs:string" />
+      <xs:element minOccurs="0" name="lastName" type="xs:string" />
+      <xs:element minOccurs="0" name="MIFirstName" type="xs:string" />
+      <xs:element minOccurs="0" name="MILastName" type="xs:string" />
+      <xs:element minOccurs="0" name="MIMemberNo" type="xs:string" />
+      <xs:element minOccurs="0" name="memberNo" type="xs:string" />
+      <xs:element minOccurs="0" name="nationalId" type="xs:string" />
+      <xs:element name="payerID" type="xs:int" />
+      <xs:element name="personCode" type="xs:int" />
+      <xs:element minOccurs="0" name="relationshipCode" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reverseSingleActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestAuthorizationID" type="xs:string" />
+      <xs:element minOccurs="0" name="activityId" type="xs:string" />
+      <xs:element minOccurs="0" name="reversalComment" type="xs:string" />
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reverseSingleActivityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPayerMemberDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MemberNo" type="xs:string" />
+      <xs:element minOccurs="0" name="PayerLicense" type="xs:string" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPayerMemberDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:memberRecordDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PostPriorRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="priorRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SenderID" type="xs:string" />
+                  <xs:element name="ReceiverID" type="xs:string" />
+                  <xs:element name="TransactionDate" type="xs:string" />
+                  <xs:element name="RecordCount" type="xs:integer" />
+                  <xs:element name="DispositionFlag" type="ns1:HeaderDispositionFlag" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Authorization">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Type" type="ns1:AuthorizationType" />
+                  <xs:element name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="IDPayer" type="xs:string" />
+                  <xs:element name="MemberID" type="xs:string" />
+                  <xs:element name="PayerID" type="xs:string" />
+                  <xs:element name="EmiratesIDNumber" type="xs:string" />
+                  <xs:element name="DateOrdered" type="xs:string" />
+                  <xs:element minOccurs="0" name="Encounter">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="FacilityID" type="xs:string" />
+                        <xs:element minOccurs="0" name="Type" type="xs:integer" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Diagnosis">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Type" type="ns1:DiagnosisType" />
+                        <xs:element name="Code" type="xs:string" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ID" type="xs:string" />
+                        <xs:element minOccurs="0" name="Start" type="xs:string" />
+                        <xs:element name="Type" type="xs:integer" />
+                        <xs:element name="Code" type="xs:string" />
+                        <xs:element name="Quantity" type="xs:double" />
+                        <xs:element name="Net" type="xs:double" />
+                        <xs:element minOccurs="0" name="Clinician" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Observation">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Type" type="ns1:ObservationType" />
+                              <xs:element name="Code" type="xs:string" />
+                              <xs:element name="Value" type="xs:string" />
+                              <xs:element name="ValueType" type="xs:string" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="Resubmission">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Type" type="ns1:ResubmissionType" />
+                        <xs:element name="Comment" type="xs:string" />
+                        <xs:element minOccurs="0" name="Attachment" type="xs:base64Binary" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProviderId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PostPriorRequestResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DhcTlException">
+    <xs:sequence>
+      <xs:element name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="exceptionDetails" type="xs:string" />
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editProviderLicense">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pbmNpiCode" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="oldLicenseId" type="xs:string" />
+      <xs:element minOccurs="0" name="licenseId" type="xs:string" />
+      <xs:element minOccurs="0" name="region" type="xs:string" />
+      <xs:element minOccurs="0" name="postOfficeUsername" type="xs:string" />
+      <xs:element minOccurs="0" name="postOfficePassword" type="xs:string" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editProviderLicenseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getActivityStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestAuthorizationID" type="xs:string" />
+      <xs:element minOccurs="0" name="activityId" type="xs:string" />
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getActivityStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="ns2:ClaimSubActivityStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmAuthrizationRecieved">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="authorizationID" type="xs:string" />
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmAuthrizationRecievedResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="submitProviderClaims">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="licenseId" type="xs:string" />
+      <xs:element name="region" type="xs:int" />
+      <xs:element minOccurs="0" name="haadUsername" type="xs:string" />
+      <xs:element minOccurs="0" name="haadPassword" type="xs:string" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+      <xs:element minOccurs="0" name="referenceMonth" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="submitProviderClaimsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="uploadLinkPriorRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="priorRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SenderID" type="xs:string" />
+                  <xs:element name="ReceiverID" type="xs:string" />
+                  <xs:element name="TransactionDate" type="xs:string" />
+                  <xs:element name="RecordCount" type="xs:integer" />
+                  <xs:element name="DispositionFlag" type="ns1:HeaderDispositionFlag" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Authorization">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Type" type="ns1:AuthorizationType" />
+                  <xs:element name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="IDPayer" type="xs:string" />
+                  <xs:element name="MemberID" type="xs:string" />
+                  <xs:element name="PayerID" type="xs:string" />
+                  <xs:element name="EmiratesIDNumber" type="xs:string" />
+                  <xs:element name="DateOrdered" type="xs:string" />
+                  <xs:element minOccurs="0" name="Encounter">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="FacilityID" type="xs:string" />
+                        <xs:element minOccurs="0" name="Type" type="xs:integer" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Diagnosis">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Type" type="ns1:DiagnosisType" />
+                        <xs:element name="Code" type="xs:string" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ID" type="xs:string" />
+                        <xs:element minOccurs="0" name="Start" type="xs:string" />
+                        <xs:element name="Type" type="xs:integer" />
+                        <xs:element name="Code" type="xs:string" />
+                        <xs:element name="Quantity" type="xs:double" />
+                        <xs:element name="Net" type="xs:double" />
+                        <xs:element minOccurs="0" name="Clinician" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Observation">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Type" type="ns1:ObservationType" />
+                              <xs:element name="Code" type="xs:string" />
+                              <xs:element name="Value" type="xs:string" />
+                              <xs:element name="ValueType" type="xs:string" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                  <xs:element minOccurs="0" name="Resubmission">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="Type" type="ns1:ResubmissionType" />
+                        <xs:element name="Comment" type="xs:string" />
+                        <xs:element minOccurs="0" name="Attachment" type="xs:base64Binary" />
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProviderId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="dateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="integrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="uploadLinkPriorRequestResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="triggerLMU">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="triggerLMUResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProcessingStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProcessingStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTransactionStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="providerID" type="xs:string" />
+      <xs:element minOccurs="0" name="transactionID" type="xs:string" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTransactionStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getNewAuthorizations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="maxResults" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getNewAuthorizationsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:authorizationsFeedback" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="authorizationsFeedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="activitiesExtraInfo" nillable="true" type="tns:activityExtraInfo" />
+      <xs:element minOccurs="0" name="MIMemberNo" type="xs:string" />
+      <xs:element minOccurs="0" name="priorAuthorization">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Header">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SenderID" type="xs:string" />
+                  <xs:element name="ReceiverID" type="xs:string" />
+                  <xs:element name="TransactionDate" type="xs:string" />
+                  <xs:element name="RecordCount" type="xs:integer" />
+                  <xs:element name="DispositionFlag" type="ns1:HeaderDispositionFlag" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="Authorization">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="Result" type="xs:string" />
+                  <xs:element name="ID" type="xs:string" />
+                  <xs:element minOccurs="0" name="IDPayer" type="xs:string" />
+                  <xs:element minOccurs="0" name="DenialCode" type="xs:string" />
+                  <xs:element name="Start" type="xs:string" />
+                  <xs:element name="End" type="xs:string" />
+                  <xs:element minOccurs="0" name="Limit" type="xs:double" />
+                  <xs:element minOccurs="0" name="Comments" type="xs:string" />
+                  <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity">
+                    <xs:complexType>
+                      <xs:sequence>
+                        <xs:element name="ID" type="xs:string" />
+                        <xs:element name="Type" type="xs:integer" />
+                        <xs:element name="Code" type="xs:string" />
+                        <xs:element minOccurs="0" name="Quantity" type="xs:double" />
+                        <xs:element minOccurs="0" name="Net" type="xs:double" />
+                        <xs:element minOccurs="0" name="List" type="xs:double" />
+                        <xs:element minOccurs="0" name="PatientShare" type="xs:double" />
+                        <xs:element minOccurs="0" name="PaymentAmount" type="xs:double" />
+                        <xs:element minOccurs="0" name="DenialCode" type="xs:string" />
+                        <xs:element minOccurs="0" maxOccurs="unbounded" name="Observation">
+                          <xs:complexType>
+                            <xs:sequence>
+                              <xs:element name="Type" type="ns1:ObservationType" />
+                              <xs:element name="Code" type="xs:string" />
+                              <xs:element name="Value" type="xs:string" />
+                              <xs:element name="ValueType" type="xs:string" />
+                            </xs:sequence>
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:sequence>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="activityExtraInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activityId" type="xs:string" />
+      <xs:element minOccurs="0" name="comment" type="xs:string" />
+      <xs:element minOccurs="0" name="denialCode" type="xs:string" />
+      <xs:element minOccurs="0" name="gross" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MIClaimID" type="xs:string" />
+      <xs:element minOccurs="0" name="net" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pationShre" type="xs:decimal" />
+      <xs:element name="transId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pbmNpiCode" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="licenseId" type="xs:string" />
+      <xs:element minOccurs="0" name="haadUsername" type="xs:string" />
+      <xs:element minOccurs="0" name="haadPassword" type="xs:string" />
+      <xs:element minOccurs="0" name="region" type="xs:string" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerProviderResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reverseSingleActivityAnyTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="requestAuthorizationID" type="xs:string" />
+      <xs:element minOccurs="0" name="activityId" type="xs:string" />
+      <xs:element minOccurs="0" name="reversalComment" type="xs:string" />
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reverseSingleActivityAnyTimeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deletePBMLinkUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deletePBMLinkUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAuthorizationStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="providerID" type="xs:string" />
+      <xs:element minOccurs="0" name="transactionID" type="xs:string" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAuthorizationStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editPBMLinkUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="providerId" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+      <xs:element minOccurs="0" name="newUserName" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="isActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="registrationKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="editPBMLinkUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:feedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

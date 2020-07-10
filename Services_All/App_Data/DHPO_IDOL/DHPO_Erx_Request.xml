@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eRx.Request xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Header>
+		<SenderID>DHA-F-9999998</SenderID>
+		<ReceiverID>INS999</ReceiverID>
+		<TransactionDate>13/08/2018 09:03</TransactionDate>
+		<RecordCount>1</RecordCount>
+		<DispositionFlag>PRODUCTION</DispositionFlag>
+	</Header>
+	<Prescription>
+		<ID>DHA-F-9999998-INS999-20180813090308</ID>
+		<Type>eRxRequest</Type>
+		<PayerID>INS999</PayerID>
+		<Clinician>erxclintest01</Clinician>
+		<Patient>
+			<MemberID>888821</MemberID>
+			<EmiratesIDNumber>000-0000-0000000-0</EmiratesIDNumber>
+			<DateOfBirth>25/08/1988</DateOfBirth>
+			<Weight>20</Weight>
+		</Patient>
+		<Encounter>
+			<FacilityID>DHA-F-9999998</FacilityID>
+			<Type>1</Type>
+		</Encounter>
+		<Diagnosis>
+			<Type>Principal</Type>
+			<Code>R51</Code>
+		</Diagnosis>
+		<Activity>
+			<ID>5928270</ID>
+			<Start>13/08/2018 09:03</Start>
+			<Type>5</Type>
+			<Code>1162-414101-0051</Code>
+			<Quantity>2</Quantity>
+			<Duration>1</Duration>
+			<Refills>0</Refills>
+			<RoutOfAdmin>ROA074</RoutOfAdmin>
+			<Instructions>Take 2 CAPLET(s), 1 Time(s) per Day For 1 Day(s).</Instructions>
+			<Frequency>
+				<UnitPerFrequency>2</UnitPerFrequency>
+				<FrequencyValue>1</FrequencyValue>
+				<FrequencyType>Day</FrequencyType>
+			</Frequency>
+		</Activity>
+	</Prescription>
+</eRx.Request>

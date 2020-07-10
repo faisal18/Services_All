@@ -1,0 +1,97 @@
+{
+"FileName":"test.json",
+  "Remittance": {
+    "Header": {
+      "SenderID": "INS026",
+      "ReceiverID": "DHA-F-0045687",
+      "TransactionDate": "18/12/2017 08:56",
+      "RecordCount": "1",
+      "DispositionFlag": "PRODUCTION",
+	  "PayerID": "INS004"
+    },
+    "Claim": [{
+      "ID": "1700045385",
+      "IDPayer": "211719895628",
+      "ProviderID": "DHA-F-0045687",
+      "PaymentReference": "50066148",
+      "DateSettlement": "25/05/2017 00:00",
+      "Encounter": { "FacilityID": "DHA-F-0045687" },
+      "Activity": [
+        {
+          "ID": "17000668180",
+          "Start": "22/03/2017 12:13",
+          "Type": "5",
+          "Code": "0005-106604-1161",
+          "Quantity": "1",
+          "Net": "5.5",
+          "List": "5.23",
+          "Clinician": "MS1362-16",
+          "Gross": "5.23",
+          "PatientShare": "0.0",
+          "PaymentAmount": "5.23",
+          "DenialCode": "PRCE-001",
+		  "Comments":"hope you are doing well"
+        },
+        {
+          "ID": "17000668181",
+          "Start": "22/03/2017 12:13",
+          "Type": "3",
+          "Code": "85025",
+          "Quantity": "1",
+          "Net": "100.8",
+          "List": "100.8",
+          "Clinician": "MS1362-16",
+          "Gross": "100.8",
+          "PatientShare": "0.0",
+          "PaymentAmount": "100.8",
+		  "Comments":"hope you are doing well"
+        },
+        {
+          "ID": "17000668182",
+          "Start": "22/03/2017 12:13",
+          "Type": "3",
+          "Code": "85610",
+          "Quantity": "1",
+          "Net": "100.8",
+          "List": "100.8",
+          "Clinician": "MS1362-16",
+          "Gross": "0.0",
+          "PatientShare": "0.0",
+          "PaymentAmount": "0",
+          "DenialCode": "MNEC-004",
+		  "Comments":"hope you are doing well"
+        },
+        {
+          "ID": "17000668183",
+          "Start": "22/03/2017 12:13",
+          "Type": "3",
+          "Code": "85730",
+          "Quantity": "1",
+          "Net": "100.8",
+          "List": "100.8",
+          "Clinician": "MS1362-16",
+          "Gross": "0.0",
+          "PatientShare": "0.0",
+          "PaymentAmount": "0",
+          "DenialCode": "MNEC-004",
+		  "Comments":"hope you are doing well"
+        },
+        {
+          "ID": "17000668184",
+          "Start": "22/03/2017 12:13",
+          "Type": "3",
+          "Code": "87880",
+          "Quantity": "1",
+          "Net": "60",
+          "List": "433.44",
+          "Clinician": "MS1362-16",
+          "Gross": "60.0",
+          "PatientShare": "0.0",
+          "PaymentAmount": "60",
+		  "Comments":"hope you are doing well"
+        }
+      ]
+    }]
+  }
+  
+}

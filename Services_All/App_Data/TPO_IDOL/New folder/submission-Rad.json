@@ -1,0 +1,79 @@
+{
+  "Submission": {
+    "Header": {
+      "SenderID": "DHA-F-0045687",
+      "ReceiverID": "INS026",
+      "TransactionDate": "27/12/2017 12:04",
+      "RecordCount": "1",
+      "DispositionFlag": "PRODUCTION",
+	  "TransactionType":"Radiology-Dispense",	  
+      "PayerID": "INS114"
+    },
+    "Claim": [{
+      "ID": "11453s85",
+      "MemberID": "05193732",
+      "ProviderID": "DHA-F-0045687",
+      "NationalIDNumber": "999-9999-9999999-9",
+      "Gross": "400",
+      "PatientShare": "0",
+      "Net": "400",
+	  "DispenseReferenceId": "59cba1cc38871c30ec13a5df",
+      "Encounter": {
+        "FacilityID": "DHA-F-0045687",
+        "Type": "1",
+        "PatientID": "194463",
+        "Start": "01/03/2017 00:15",
+        "End": "01/03/2017 00:30",
+        "StartType": "1",
+        "EndType": "1",
+        "TransferSource": "None",
+        "TransferDestination": "None"
+      },
+      "Diagnosis": [{
+        "Type": "Principal",
+        "Code": "E88.81"
+      }],
+      "Activity": [{
+        "ID": "17000453850",
+        "Start": "01/03/2017 00:15",
+        "Type": "8",
+        "Code": "10",
+        "Quantity": "1",
+        "Net": "400",
+        "Clinician": "MS0008-05",
+		    "DispensedActivityId": "11225412",
+        "Observation": [
+          {
+            "Type": "Text",
+            "Code": "Description",
+            "Value": "01002023|SPECIALITY CONSULTATION FEE",
+            "ValueType": "Other"
+          },
+          {
+            "Type": "Result",
+            "Code": "BPS",
+            "Value": "127",
+            "ValueType": "mmHg"
+          },
+          {
+            "Type": "Result",
+            "Code": "BPD",
+            "Value": "95",
+            "ValueType": "mmHg"
+          }
+        ],
+         "Result": [
+              {
+                "Type": "File",
+                "Value": "59cba1cc5551c30ec53a5df"
+              },
+			  {
+                "Type": "File",
+                "Value": "59cba1cc5551c30ec13a5df"
+              }
+            ]
+      }]
+    }]
+  },
+  "FileName":"test.json"
+}

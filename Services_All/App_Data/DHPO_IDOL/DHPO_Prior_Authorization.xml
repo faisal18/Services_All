@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Prior.Authorization xsi:schemaLocation="http://www.eClaimLink.ae/DHD/CommonTypes.xsd 
+http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.eClaimLink.ae/DHD/CommonTypes/PriorAuthorization.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <SenderID>TPA038</SenderID>
+        <ReceiverID>DHA-F-9999998</ReceiverID>
+        <TransactionDate>12/08/2018 13:20</TransactionDate>
+        <RecordCount>1</RecordCount>
+        <DispositionFlag>PRODUCTION</DispositionFlag>
+    </Header>
+    <Authorization>
+        <Result>No</Result>
+        <ID>DHA-F-9999998-TPA038-20180812131516</ID>
+        <IDPayer>PBM_32987877_19000</IDPayer>
+        <DenialCode>ELIG-001</DenialCode>
+        <Start>12/08/2018 13:20</Start>
+        <End>12/08/2018 13:35</End>
+        <Limit>1.0</Limit>
+        <Comments>MI MemberID: (INV_MEM_00)
+Activity(14359411, MI Claim ID: 1114182758) Member is not registered on the online authorization system. Please contact payer or TPA for assistance. 
+ (MI_ADJ_0129),
+</Comments>
+        <Activity>
+            <ID>14359411</ID>
+            <Type>5</Type>
+            <Code>0005-107001-0052</Code>
+            <Quantity>48.0</Quantity>
+            <Net>13.0</Net>
+            <List>13.0</List>
+            <PatientShare>0.0</PatientShare>
+            <PaymentAmount>0.0</PaymentAmount>
+            <DenialCode>ELIG-001</DenialCode>
+        </Activity>
+    </Authorization>
+</Prior.Authorization>

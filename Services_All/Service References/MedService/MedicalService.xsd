@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="medservice.tameen.ae" elementFormDefault="qualified" targetNamespace="medservice.tameen.ae" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CheckMemberEligibility">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eligibilityRequest" nillable="true" type="tns:MemberEligibilityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="MemberEligibilityRequest">
+    <xs:sequence>
+      <xs:element name="HealthCardNumber" nillable="true" type="xs:string" />
+      <xs:element name="SenderID" nillable="true" type="xs:string" />
+      <xs:element name="SourceSystem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MemberEligibilityRequest" nillable="true" type="tns:MemberEligibilityRequest" />
+  <xs:element name="CheckMemberEligibilityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckMemberEligibilityResult" nillable="true" type="tns:MemberEligibilityResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="MemberEligibilityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HealthCardDetails" nillable="true" type="tns:HealthCardDetail" />
+      <xs:element minOccurs="0" name="MemberDetails" nillable="true" type="tns:MemberDetail" />
+      <xs:element minOccurs="0" name="NetworkDetails" nillable="true" type="tns:NetworkDetail" />
+      <xs:element minOccurs="0" name="PolicyDetails" nillable="true" type="tns:PolicyDetail" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ValidationResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MemberEligibilityResponse" nillable="true" type="tns:MemberEligibilityResponse" />
+  <xs:complexType name="HealthCardDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IssueDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HealthCardDetail" nillable="true" type="tns:HealthCardDetail" />
+  <xs:complexType name="MemberDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmiratesID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MemberDetail" nillable="true" type="tns:MemberDetail" />
+  <xs:complexType name="NetworkDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EligibilityDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EligibilityFlag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EligibilityResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FacilityName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NetworkDetail" nillable="true" type="tns:NetworkDetail" />
+  <xs:complexType name="PolicyDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GroupPolicyId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsBupa" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDependent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsManualProcess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsVIP" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MemberBenefits" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetworkType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaitingPeriod" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyDetail" nillable="true" type="tns:PolicyDetail" />
+  <xs:complexType name="ValidationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidationResult" nillable="true" type="tns:ValidationResult" />
+  <xs:element name="GetCoverAndLimit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCoverAndLimitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCoverAndLimitResult" nillable="true" type="tns:PriorAuthorizationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PriorAuthorizationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BenefitGroups" nillable="true" type="tns:ArrayOfBenefitGroup" />
+      <xs:element minOccurs="0" name="FeeGuideList" nillable="true" type="tns:ArrayOfFeeGuide" />
+      <xs:element minOccurs="0" name="RequestContext" nillable="true" type="tns:MessageContext" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ValidationResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriorAuthorizationResponse" nillable="true" type="tns:PriorAuthorizationResponse" />
+  <xs:complexType name="ArrayOfBenefitGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BenefitGroup" nillable="true" type="tns:BenefitGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBenefitGroup" nillable="true" type="tns:ArrayOfBenefitGroup" />
+  <xs:complexType name="BenefitGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverBenefits" nillable="true" type="tns:ArrayOfCoverBenefit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BenefitGroup" nillable="true" type="tns:BenefitGroup" />
+  <xs:complexType name="ArrayOfCoverBenefit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CoverBenefit" nillable="true" type="tns:CoverBenefit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCoverBenefit" nillable="true" type="tns:ArrayOfCoverBenefit" />
+  <xs:complexType name="CoverBenefit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregateLimit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BillingMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Coinsurance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CoinsuranceCap" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Copay" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CoverCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverLimit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CoverName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoverUtilized" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FullUtilized" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsCovered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LimitAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ResponseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResponseMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SystemMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaitingPeriod" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CoverBenefit" nillable="true" type="tns:CoverBenefit" />
+  <xs:complexType name="ArrayOfFeeGuide">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FeeGuide" nillable="true" type="tns:FeeGuide" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFeeGuide" nillable="true" type="tns:ArrayOfFeeGuide" />
+  <xs:complexType name="FeeGuide">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Benefit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BenefitFee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BenefitType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FeeGuide" nillable="true" type="tns:FeeGuide" />
+  <xs:complexType name="MessageContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Environment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpiresOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MessageSentOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MessageType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Originator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplyOf" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReplyTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageContext" nillable="true" type="tns:MessageContext" />
+  <xs:element name="GetBenefitFeeGuide">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBenefitFeeGuideResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBenefitFeeGuideResult" nillable="true" type="tns:BenefitFeeGuideResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="BenefitFeeGuideResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FeeGuides" nillable="true" type="tns:ArrayOfBenefitFeeGuide" />
+      <xs:element minOccurs="0" name="RequestContext" nillable="true" type="tns:MessageContext" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ValidationResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BenefitFeeGuideResponse" nillable="true" type="tns:BenefitFeeGuideResponse" />
+  <xs:complexType name="ArrayOfBenefitFeeGuide">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BenefitFeeGuide" nillable="true" type="tns:BenefitFeeGuide" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBenefitFeeGuide" nillable="true" type="tns:ArrayOfBenefitFeeGuide" />
+  <xs:complexType name="BenefitFeeGuide">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BenefitFee" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BenefitId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BenefitType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BenefitFeeGuide" nillable="true" type="tns:BenefitFeeGuide" />
+  <xs:element name="GetPolicyDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="policyDocumentRequest" nillable="true" type="tns:PolicyDocumentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PolicyDocumentRequest">
+    <xs:sequence>
+      <xs:element name="CountryIsoCode" nillable="true" type="xs:string" />
+      <xs:element name="PolicyNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyDocumentRequest" nillable="true" type="tns:PolicyDocumentRequest" />
+  <xs:element name="GetPolicyDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPolicyDocumentResult" nillable="true" type="tns:PolicyDocumentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PolicyDocumentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PolicyDocuments" nillable="true" type="tns:ArrayOfPolicyDocument" />
+      <xs:element minOccurs="0" name="Result" nillable="true" type="tns:ValidationResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyDocumentResponse" nillable="true" type="tns:PolicyDocumentResponse" />
+  <xs:complexType name="ArrayOfPolicyDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PolicyDocument" nillable="true" type="tns:PolicyDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPolicyDocument" nillable="true" type="tns:ArrayOfPolicyDocument" />
+  <xs:complexType name="PolicyDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocumentContents" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PolicyDocument" nillable="true" type="tns:PolicyDocument" />
+</xs:schema>

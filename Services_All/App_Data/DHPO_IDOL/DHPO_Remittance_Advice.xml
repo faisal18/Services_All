@@ -1,0 +1,30 @@
+<Remittance.Advice xmlns:tns="http://www.eclaimlink.ae/DHD/ValidationSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.eclaimlink.ae/DHD/ValidationSchema/RemittanceAdvice.xsd">
+  <Header>
+    <SenderID>INS999</SenderID>
+    <ReceiverID>DHA-F-9999998</ReceiverID>
+    <TransactionDate>08/01/2018 12:29</TransactionDate>
+    <RecordCount>1</RecordCount>
+    <DispositionFlag>PRODUCTION</DispositionFlag>
+  </Header>
+  <Claim>
+    <ID>test331121</ID>
+    <IDPayer>testmbrAQ</IDPayer>
+    <ProviderID>DHA-F-9999998</ProviderID>
+    <PaymentReference>testreference2</PaymentReference>
+    <DateSettlement>08/01/2018 12:29</DateSettlement>
+    <Encounter>
+      <FacilityID>DHA-F-9999998</FacilityID>
+    </Encounter>
+    <Activity>
+      <ID>32419586</ID>
+      <Start>08/01/2018 12:29</Start>
+      <Type>3</Type>
+      <Code>87070</Code>
+      <Quantity>1</Quantity>
+      <Net>13.5</Net>
+      <Clinician>DHA-P-0241968</Clinician>
+      <PatientShare>0</PatientShare>
+      <PaymentAmount>13.5</PaymentAmount>
+    </Activity>
+  </Claim>
+</Remittance.Advice>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://memberMgr.ws.bus.dimensions.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="MemberUpdateWSService" targetNamespace="http://memberMgr.ws.bus.dimensions.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://pbmswitch.com:9090/MemberUpdateWS?xsd=1" namespace="http://memberMgr.ws.bus.dimensions.com/" />
+    </xsd:schema>
+  </types>
+  <message name="updateMemberExclusion">
+    <part name="parameters" element="tns:updateMemberExclusion" />
+  </message>
+  <message name="updateMemberExclusionResponse">
+    <part name="parameters" element="tns:updateMemberExclusionResponse" />
+  </message>
+  <message name="DhcTlException">
+    <part name="fault" element="tns:DhcTlException" />
+  </message>
+  <message name="updateMemebrBatch">
+    <part name="parameters" element="tns:updateMemebrBatch" />
+  </message>
+  <message name="updateMemebrBatchResponse">
+    <part name="parameters" element="tns:updateMemebrBatchResponse" />
+  </message>
+  <message name="updateMemebr">
+    <part name="parameters" element="tns:updateMemebr" />
+  </message>
+  <message name="updateMemebrResponse">
+    <part name="parameters" element="tns:updateMemebrResponse" />
+  </message>
+  <message name="getMemberDetails">
+    <part name="parameters" element="tns:getMemberDetails" />
+  </message>
+  <message name="getMemberDetailsResponse">
+    <part name="parameters" element="tns:getMemberDetailsResponse" />
+  </message>
+  <portType name="MemberUpdateWS">
+    <operation name="updateMemberExclusion">
+      <input wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/updateMemberExclusionRequest" message="tns:updateMemberExclusion" />
+      <output wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/updateMemberExclusionResponse" message="tns:updateMemberExclusionResponse" />
+      <fault wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/updateMemberExclusion/Fault/DhcTlException" name="DhcTlException" message="tns:DhcTlException" />
+    </operation>
+    <operation name="updateMemebrBatch">
+      <input wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/updateMemebrBatchRequest" message="tns:updateMemebrBatch" />
+      <output wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/updateMemebrBatchResponse" message="tns:updateMemebrBatchResponse" />
+      <fault wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/updateMemebrBatch/Fault/DhcTlException" name="DhcTlException" message="tns:DhcTlException" />
+    </operation>
+    <operation name="updateMemebr">
+      <input wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/updateMemebrRequest" message="tns:updateMemebr" />
+      <output wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/updateMemebrResponse" message="tns:updateMemebrResponse" />
+      <fault wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/updateMemebr/Fault/DhcTlException" name="DhcTlException" message="tns:DhcTlException" />
+    </operation>
+    <operation name="getMemberDetails">
+      <input wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/getMemberDetailsRequest" message="tns:getMemberDetails" />
+      <output wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/getMemberDetailsResponse" message="tns:getMemberDetailsResponse" />
+      <fault wsam:Action="http://memberMgr.ws.bus.dimensions.com/MemberUpdateWS/getMemberDetails/Fault/DhcTlException" name="DhcTlException" message="tns:DhcTlException" />
+    </operation>
+  </portType>
+  <binding name="MemberUpdateWSPortBinding" type="tns:MemberUpdateWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="updateMemberExclusion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="DhcTlException">
+        <soap:fault use="literal" name="DhcTlException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="updateMemebrBatch">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="DhcTlException">
+        <soap:fault use="literal" name="DhcTlException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="updateMemebr">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="DhcTlException">
+        <soap:fault use="literal" name="DhcTlException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="getMemberDetails">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="DhcTlException">
+        <soap:fault use="literal" name="DhcTlException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MemberUpdateWSService">
+    <port name="MemberUpdateWSPort" binding="tns:MemberUpdateWSPortBinding">
+      <soap:address location="http://pbmswitch.com:9090/MemberUpdateWS" />
+    </port>
+  </service>
+</definitions>

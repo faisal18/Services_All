@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<Claim.Submission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Header>
+    <SenderID>DHA-F-9999998</SenderID>
+    <ReceiverID>INS999</ReceiverID>
+    <TransactionDate>09/08/2018 11:12</TransactionDate>
+    <RecordCount>1</RecordCount>
+    <DispositionFlag>PRODUCTION</DispositionFlag>
+  </Header>
+  <Claim>
+    <ID>401205260 - 23JUNE34348 NEURON NGI - 1</ID>
+    <MemberID>42002012432</MemberID>
+    <PayerID>INS999</PayerID>
+    <ProviderID>DHA-F-9999998</ProviderID>
+    <EmiratesIDNumber>999-9999-9999999-9</EmiratesIDNumber>
+    <Gross>294.80</Gross>
+    <PatientShare>29.48</PatientShare>
+    <Net>265.32</Net>
+    <Encounter>
+      <FacilityID>DHA-F-9999998</FacilityID>
+      <Type>1</Type>
+      <PatientID>43290</PatientID>
+      <Start>23/06/2018 22:36</Start>
+      <End>23/06/2018 23:06</End>
+      <StartType>1</StartType>
+      <TransferSource />
+      <TransferDestination />
+    </Encounter>
+    <Diagnosis>
+      <Type>Principal</Type>
+      <Code>E11.9</Code>
+    </Diagnosis>
+    <Diagnosis>
+      <Type>Secondary</Type>
+      <Code>I10</Code>
+    </Diagnosis>
+    <Diagnosis>
+      <Type>Secondary</Type>
+      <Code>E78.2</Code>
+    </Diagnosis>
+    <Activity>
+      <ID>38323775</ID>
+      <Start>23/06/2018 22:36</Start>
+      <Type>3</Type>
+      <Code>83036</Code>
+      <Quantity>1</Quantity>
+      <Net>74.52</Net>
+      <Clinician>DHA-P-0063924</Clinician>
+      <Observation>
+        <Type>Result</Type>
+        <Code>A1C</Code>
+        <Value>5.4</Value>
+        <ValueType>Percent</ValueType>
+      </Observation>
+    </Activity>
+    <Activity>
+      <ID>38323776</ID>
+      <Start>23/06/2018 22:36</Start>
+      <Type>3</Type>
+      <Code>82565</Code>
+      <Quantity>1</Quantity>
+      <Net>32.4</Net>
+      <Clinician>DHA-P-0063924</Clinician>
+      <Observation>
+        <Type>Result</Type>
+        <Code>CR</Code>
+        <Value>1.17</Value>
+        <ValueType>umol/L</ValueType>
+      </Observation>
+    </Activity>
+    <Activity>
+      <ID>38323777</ID>
+      <Start>23/06/2018 22:36</Start>
+      <Type>3</Type>
+      <Code>83718</Code>
+      <Quantity>1</Quantity>
+      <Net>40.5</Net>
+      <Clinician>DHA-P-0063924</Clinician>
+      <Observation>
+        <Type>Result</Type>
+        <Code>HDL</Code>
+        <Value>1.14301</Value>
+        <ValueType>mmol/L</ValueType>
+      </Observation>
+    </Activity>
+    <Activity>
+      <ID>38323778</ID>
+      <Start>23/06/2018 22:36</Start>
+      <Type>3</Type>
+      <Code>82465</Code>
+      <Quantity>1</Quantity>
+      <Net>20.7</Net>
+      <Clinician>DHA-P-0063924</Clinician>
+      <Observation>
+        <Type>Result</Type>
+        <Code>CHOL</Code>
+        <Value> 4.18932</Value>
+        <ValueType>mmol/L</ValueType>
+      </Observation>
+    </Activity>
+    <Activity>
+      <ID>38323779</ID>
+      <Start>23/06/2018 22:36</Start>
+      <Type>3</Type>
+      <Code>83721</Code>
+      <Quantity>1</Quantity>
+      <Net>40.5</Net>
+      <Clinician>DHA-P-0063924</Clinician>
+      <Observation>
+        <Type>Result</Type>
+        <Code>LDL</Code>
+        <Value>2.89632 </Value>
+        <ValueType>mmol/L</ValueType>
+      </Observation>
+    </Activity>
+    <Activity>
+      <ID>38323780</ID>
+      <Start>23/06/2018 22:36</Start>
+      <Type>3</Type>
+      <Code>84478</Code>
+      <Quantity>1</Quantity>
+      <Net>29.7</Net>
+      <Clinician>DHA-P-0063924</Clinician>
+      <Observation>
+        <Type>Result</Type>
+        <Code>TRIG</Code>
+        <Value>1.25319</Value>
+        <ValueType>mmol/L</ValueType>
+      </Observation>
+    </Activity>
+    <Activity>
+      <ID>38323781</ID>
+      <Start>23/06/2018 22:36</Start>
+      <Type>3</Type>
+      <Code>84460</Code>
+      <Quantity>1</Quantity>
+      <Net>27</Net>
+      <Clinician>DHA-P-0063924</Clinician>
+      <Observation>
+        <Type>Result</Type>
+        <Code>ALT</Code>
+        <Value>71</Value>
+        <ValueType>mmol/L</ValueType>
+      </Observation>
+    </Activity>
+  </Claim>
+</Claim.Submission>

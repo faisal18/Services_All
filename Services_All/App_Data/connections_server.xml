@@ -1,0 +1,101 @@
+<ServerConnections>
+  <connection name="Automation">
+    <server>-S 10.162.176.206 </server>
+    <database>-d FS_WS_WSCTFW </database>
+    <username>-U fshaikh </username>
+    <password>-P Dell@900 </password>
+  </connection>
+  <connection name="PBMM">
+    <server>-S 10.162.176.85 </server>
+    <database>-d PBMM </database>
+    <username>-U FAnsari </username>
+    <password>-P Fa_2662 </password>
+  </connection>
+  <connection name="PBMLINK">
+    <server>-S 10.162.176.86 </server>
+    <database>-d PBMLink.NET </database>
+    <username>-U fsheikh </username>
+    <password>-P Abcd#1234 </password>
+  </connection>
+  <connection name="DHPO">
+    <server>-S 10.162.176.24 </server>
+    <database>-d DHPO </database>
+    <username>-U michael </username>
+    <password>-P asdf@1234 </password>
+  </connection>
+  <connection name="ERX">
+    <server>-S 10.156.62.60 </server>
+    <database>-d ERX </database>
+    <username>-U fansari </username>
+    <password>-P Abcd1234 </password>
+  </connection>
+  <connection name="ECLAIMLINK">
+    <server>-S 10.156.62.60 </server>
+    <database>-d Eclaimlink </database>
+    <username>-U fazeel </username>
+    <password>-P Dell@123 </password>
+  </connection>
+
+  <connection name="ECLAIMLINKPORTAL">
+    <server>-S 10.156.62.60 </server>
+    <database>-d EclaimLinkPortal </database>
+    <username>-U fazeel </username>
+    <password>-P Dell@123 </password>
+  </connection>
+  <connection name="MemberRegister">
+    <server>-S 10.156.62.60 </server>
+    <database>-d MemberRegister </database>
+    <username>-U fazeel </username>
+    <password>-P Dell@123 </password>
+  </connection>
+  <connection name="ECLAIMPARSER">
+    <server>-S 10.11.13.48 </server>
+    <database>-d eclaimparser </database>
+    <username>-U fshaikh </username>
+    <password>-P Dell@111 </password>
+  </connection>
+  <connection name="DHPOOLD">
+    <server>-S 10.156.62.53 </server>
+    <database>-d DHPO </database>
+    <username>-U fshaikh </username>
+    <password>-P fshaikh@2016 </password>
+  </connection>
+
+  <connection name="Localhost">
+    <server>-S LocalHost </server>
+    <database>-d Master </database>
+    <username>-U fshaikh </username>
+    <password>-P Dell@777 </password>
+  </connection>
+  <connection name="OICProvider">
+    <server>-S 10.11.13.163 </server>
+    <database>-d OIC.Eauth </database>
+    <username>-U fshaikh </username>
+    <password>-P Dell@100 </password>
+  </connection>
+  <connection name="OICPayer">
+    <server>-S 10.162.176.29 </server>
+    <database>-d eAuth </database>
+    <username>-U fshaikh </username>
+    <password>-P Dell@200 </password>
+  </connection>
+  <connection name="PBMUAT">
+    <server>-S 10.11.13.43 </server>
+    <database>-d PBMM </database>
+    <username>-U fshaikh </username>
+    <password>-P Dell@100 </password>
+  </connection>
+  <connection name="QA">
+    <server>-S 10.11.13.41 </server>
+    <database>-d DHPO2 </database>
+    <username>-U fansari </username>
+    <password>-P Dell@123 </password>
+  </connection>
+  <connection name="AIMS">
+    <server>-S 10.11.13.41 </server>
+    <database>-d DHPO2 </database>
+    <username>-U fansari </username>
+    <password>-P Dell@123 </password>
+  </connection>
+
+</ServerConnections>

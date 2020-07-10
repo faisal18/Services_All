@@ -1,0 +1,16 @@
+<ServerConnections>
+	<connection name="QA">
+		<server>-S 10.11.13.41 </server>
+		<database>-d [DHPO2] </database>
+		<username>-U dhc\FAnsari </username>
+		<password>-P ansari.COM </password>
+    <path>-A C:\tmp\Faisal</path>
+	</connection>
+  <connection name="Oman">
+    <server>-S 10.11.13.41 </server>
+    <database>-d [DHPO2] </database>
+    <username>-U dhc\FAnsari </username>
+    <password>-P ansari.COM </password>
+    <path>-A C:\tmp\Faisal</path>
+  </connection>
+</ServerConnections>
