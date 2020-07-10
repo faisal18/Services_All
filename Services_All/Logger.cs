@@ -7,6 +7,7 @@ namespace Services_All
 {
     public class Logger
     {
+
         private static log4net.ILog Log { get; set; }
 
         static Logger()
