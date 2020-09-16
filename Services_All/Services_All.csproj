@@ -93,6 +93,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -612,6 +616,7 @@
     <Content Include="Utilities_UI\DHPO_Cancellation.aspx" />
     <Content Include="Utilities_UI\DHPO_WebService.aspx" />
     <Content Include="Utilities_UI\IDAM_Integration.aspx" />
+    <Content Include="Utilities_UI\Monitoring_Automation.aspx" />
     <Content Include="Utilities_UI\test_Dashboard.aspx" />
     <Content Include="Utilities_UI\Dash_UploadData.aspx" />
     <Content Include="Utilities_UI\Dhpo_archiving.aspx" />
@@ -1175,6 +1180,7 @@
     <Compile Include="ExtraClasses\JenkinsAutomation.cs" />
     <Compile Include="ExtraClasses\JordanCS_LAB.cs" />
     <Compile Include="ExtraClasses\JordanCS_RAD.cs" />
+    <Compile Include="ExtraClasses\Monitoring_Automation.cs" />
     <Compile Include="ExtraClasses\Monitoring_Transactions.cs" />
     <Compile Include="ExtraClasses\Monitoring_UploadData.cs" />
     <Compile Include="ExtraClasses\NahdiVpn.cs" />
@@ -1392,6 +1398,13 @@
     </Compile>
     <Compile Include="Utilities_UI\IDAM_Integration.aspx.designer.cs">
       <DependentUpon>IDAM_Integration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\Monitoring_Automation.aspx.cs">
+      <DependentUpon>Monitoring_Automation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\Monitoring_Automation.aspx.designer.cs">
+      <DependentUpon>Monitoring_Automation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities_UI\test_Dashboard.aspx.cs">
       <DependentUpon>test_Dashboard.aspx</DependentUpon>
