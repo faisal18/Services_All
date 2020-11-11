@@ -138,15 +138,18 @@ namespace Services_All.Utilities_UI
             {
                 ddl_services.DataSource = obj.Get_Services(int.Parse(ddl_products.SelectedValue));
                 ddl_services.DataBind();
+
                 if (ddl_services.SelectedValue.Length > 0)
                 {
                     ddl_logs.DataSource = obj.Get_Logs(int.Parse(ddl_services.SelectedValue));
+                    ddl_logs.DataBind();
                 }
                 else
                 {
                     ddl_logs.DataSource = null;
                     ddl_logs.DataBind();
                 }
+
 
             }
             catch (Exception ex)
@@ -159,7 +162,7 @@ namespace Services_All.Utilities_UI
         {
             try
             {
-                ddl_logs.DataSource = obj.Get_Products(int.Parse(ddl_services.SelectedValue));
+                ddl_logs.DataSource = obj.Get_Logs(int.Parse(ddl_services.SelectedValue));
                 ddl_logs.DataBind();
             }
             catch (Exception ex)
