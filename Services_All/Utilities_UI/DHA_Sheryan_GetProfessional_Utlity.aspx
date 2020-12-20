@@ -13,6 +13,10 @@
     </div>
 
     <div>
+        <asp:RadioButton runat="server" ID="rdbtn_detailed" Text="Short ?" />
+    </div>
+
+    <div>
         <asp:Button runat="server" ID="btn_submit" Text="Submit" OnClick="btn_submit_Click" />
     </div>
 

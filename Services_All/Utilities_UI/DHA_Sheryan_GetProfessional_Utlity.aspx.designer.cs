@@ -22,6 +22,15 @@ namespace Services_All.Utilities_UI {
         protected global::System.Web.UI.WebControls.TextBox txt_license;
         
         /// <summary>
+        /// rdbtn_detailed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdbtn_detailed;
+        
+        /// <summary>
         /// btn_submit control.
         /// </summary>
         /// <remarks>
