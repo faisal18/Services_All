@@ -615,6 +615,7 @@
     <Content Include="Utilities_UI\DHCC_Client_AutoUpload.aspx" />
     <Content Include="Utilities_UI\DHPO_Cancellation.aspx" />
     <Content Include="Utilities_UI\DHPO_WebService.aspx" />
+    <Content Include="Utilities_UI\Eclaim_Add_MissingDrug.aspx" />
     <Content Include="Utilities_UI\IDAM_Integration.aspx" />
     <Content Include="Utilities_UI\Monitoring_Automation.aspx" />
     <Content Include="Utilities_UI\test_Dashboard.aspx" />
@@ -1175,6 +1176,7 @@
     <Compile Include="ExtraClasses\Dhpo_archiving.cs" />
     <Compile Include="ExtraClasses\DHPO_Cancellation.cs" />
     <Compile Include="ExtraClasses\DHPO_WebService.cs" />
+    <Compile Include="ExtraClasses\Eclaim_Add_MissingDrug.cs" />
     <Compile Include="ExtraClasses\EncryptionDecryptionHelper.cs" />
     <Compile Include="ExtraClasses\IDAM_Integration.cs" />
     <Compile Include="ExtraClasses\JenkinsAutomation.cs" />
@@ -1391,6 +1393,13 @@
     </Compile>
     <Compile Include="Utilities_UI\DHPO_WebService.aspx.designer.cs">
       <DependentUpon>DHPO_WebService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\Eclaim_Add_MissingDrug.aspx.cs">
+      <DependentUpon>Eclaim_Add_MissingDrug.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\Eclaim_Add_MissingDrug.aspx.designer.cs">
+      <DependentUpon>Eclaim_Add_MissingDrug.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities_UI\IDAM_Integration.aspx.cs">
       <DependentUpon>IDAM_Integration.aspx</DependentUpon>

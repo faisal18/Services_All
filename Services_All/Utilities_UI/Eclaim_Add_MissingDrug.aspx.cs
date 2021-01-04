@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Services_All.Utilities_UI
 {
-    public partial class DHPO_Cancellation : System.Web.UI.Page
+    public partial class Eclaim_Add_MissingDrug : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,26 +18,21 @@ namespace Services_All.Utilities_UI
         {
             try
             {
-                if (txt_transID.Text.Length > 1)
+                if (txt_ScientificCode.Text.Length > 1)
                 {
                     string[] differences = { ",", "\t", "\n", "\r" };
-                    string[] carry = txt_transID.Text.Split(differences, StringSplitOptions.RemoveEmptyEntries);
-
-                    ExtraClasses.DHPO_Cancellation obj = new ExtraClasses.DHPO_Cancellation();
-
+                    string[] carry = txt_ScientificCode.Text.Split(differences, StringSplitOptions.RemoveEmptyEntries);
+                    ExtraClasses.Eclaim_Add_MissingDrug obj = new ExtraClasses.Eclaim_Add_MissingDrug();
                     foreach (string data in carry)
                     {
-                        lbl_message.InnerText = lbl_message.InnerText + obj.Execute(data,false);
+                        lbl_message.InnerText =lbl_message.InnerText + obj.execute(data);
                     }
-
-                        
                 }
             }
             catch (Exception ex)
             {
                 lbl_message.InnerText = ex.Message;
             }
-
         }
     }
 }

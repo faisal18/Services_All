@@ -53,8 +53,7 @@ namespace Services_All.Utilities_UI
 
                         if(detailed)
                         {
-                            result1 = result1 + ParseAsDHCC_Professional(result);
-                            sb.Append(result1 + "\n");
+                            sb.Append(ParseAsDHCC_Professional(result));
                         }
                         else
                         {
@@ -62,7 +61,14 @@ namespace Services_All.Utilities_UI
                         }
                     }
 
-                    txt_rich_box.InnerText = sb.ToString();
+                    if (detailed)
+                    {
+                        txt_rich_box.InnerText = result1 + sb.ToString();
+                    }
+                    else
+                    {
+                        txt_rich_box.InnerText = sb.ToString();
+                    }
                 }
 
             }

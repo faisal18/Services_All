@@ -36,10 +36,10 @@
     <password>-P Abcd@1234 </password>
   </connection>
   <connection name="ECLAIMLINK">
-    <server>-S 10.162.176.103 </server>
+    <server>-S 10.156.62.60 </server>
     <database>-d Eclaimlink </database>
-    <username>-U fansari </username>
-    <password>-P Abcd1234 </password>
+    <username>-U maquino </username>
+    <password>-P Aquino#2019 </password>
   </connection>
 
   <connection name="ECLAIMLINKPORTAL">
