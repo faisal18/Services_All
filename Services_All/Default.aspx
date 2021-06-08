@@ -25,6 +25,7 @@
                 <li><a runat="server" href="~/Utilities_UI/DHPO_WebService.aspx">DHPO WebService</a></li>
                 <li><a runat="server" href="~/Utilities_UI/DHA_Sheryan_Professionals.aspx">DHA Professional LMU</a></li>
                 <li><a runat="server" href="~/Utilities_UI/DHA_Sheryan_GetProfessional_Utlity.aspx">DHA_Sheryan_GetProfessional_Utlity</a></li>
+                <li><a runat="server" href="~/Utilities_UI/IdamDha.aspx">IDAM DHA Check</a></li>
                 <%--<li><a runat="server" href="~/Utilities_UI/DHPO_Cancellation.aspx">DHPO Cancellation</a></li>--%>
             </ul>
         </fieldset>

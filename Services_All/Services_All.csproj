@@ -616,6 +616,7 @@
     <Content Include="Utilities_UI\DHPO_Cancellation.aspx" />
     <Content Include="Utilities_UI\DHPO_WebService.aspx" />
     <Content Include="Utilities_UI\Eclaim_Add_MissingDrug.aspx" />
+    <Content Include="Utilities_UI\IdamDha.aspx" />
     <Content Include="Utilities_UI\IDAM_Integration.aspx" />
     <Content Include="Utilities_UI\Monitoring_Automation.aspx" />
     <Content Include="Utilities_UI\test_Dashboard.aspx" />
@@ -1400,6 +1401,13 @@
     </Compile>
     <Compile Include="Utilities_UI\Eclaim_Add_MissingDrug.aspx.designer.cs">
       <DependentUpon>Eclaim_Add_MissingDrug.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities_UI\IdamDha.aspx.cs">
+      <DependentUpon>IdamDha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities_UI\IdamDha.aspx.designer.cs">
+      <DependentUpon>IdamDha.aspx</DependentUpon>
     </Compile>
     <Compile Include="Utilities_UI\IDAM_Integration.aspx.cs">
       <DependentUpon>IDAM_Integration.aspx</DependentUpon>

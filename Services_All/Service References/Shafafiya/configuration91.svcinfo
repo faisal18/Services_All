@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="H4bxUa5rF9NIsOE0u7a01Cr8BYk=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="X6zhopsdMEel5Z05XYjeX+4PCFpv1guaJt/DU+69eYs=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="WebservicesSoap1">
       <properties>
@@ -221,7 +221,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WebservicesSoap1" contract="Shafafiya.WebservicesSoap" bindingType="basicHttpBinding" address="https://shafafiya.doh.gov.ae/v2/webservices.asmx" bindingConfiguration="WebservicesSoap1">
+    <endpoint name="WebservicesSoap" contract="Shafafiya.WebservicesSoap" bindingType="basicHttpBinding" address="https://shafafiya.doh.gov.ae/v2/webservices.asmx" bindingConfiguration="WebservicesSoap1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>https://shafafiya.doh.gov.ae/v2/webservices.asmx</serializedValue>
@@ -296,7 +296,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WebservicesSoap1</serializedValue>
+          <serializedValue>WebservicesSoap</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
